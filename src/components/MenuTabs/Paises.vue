@@ -1,109 +1,112 @@
 <template>
-  <v-row
-    class="todo"
-    style="height=0px"
-    :class="{ 'Ligas': $store.state.showpaises }"
-    no-gutters
-  >
-
-    <v-row
-      no-gutters
-      :class="{ 'd-none': !$store.state.showpaises }"
-      style="width:100vw"
+  <v-row no-gutters>
+    <v-col
+      cols="3"
+      :class="{ 'd-none': !$store.state.drawer }"
     >
-      <v-col
-        v-for="continente in $store.state.continentes"  :key="continente.continente_id"
-        cols="3"
+
+    </v-col>
+    <v-col :cols="$store.state.wholebody">
+      <v-row
+        class="todo"
+        style="height=0px"
+        :class="{ 'Ligas': $store.state.showpaises }"
+        no-gutters
       >
-          <v-row
-            class="justify-center mt-1 font-weight-black"
-            align="center"
-            style="font-size:12px;color:rgb(255,255,255,0.6);height:0px"
-            no-gutters
+
+        <v-row
+          no-gutters
+          :class="{ 'd-none': !$store.state.showpaises }"
+          style="width:100vw"
+        >
+          <v-col
+            v-for="continente in $store.state.continentes"  :key="continente.continente_id"
+            cols="3"
           >
-            {{ continente.name }}
-          </v-row>
+              <v-row
+                class="justify-center mt-1 font-weight-black"
+                align="center"
+                style="font-size:12px;color:rgb(255,255,255,0.6);height:0px"
+                no-gutters
+              >
+                {{ continente.name }}
+              </v-row>
 
-        </v-col>
-    </v-row>
+            </v-col>
+        </v-row>
 
-    <v-row
-      :class="{ 'd-none': !$store.state.showpaises }"
-    >
-      <v-col
-        v-for="continente in $store.state.continentes"  :key="continente.continente_id"
-        cols="3"
-        class="ma-0"
-      >
-          <v-list
-            dense
-            dark
-            style="background-color:rgb(225,225,225,0.1);max-height:300px;border-radius:2px"
-            class="overflow-y-auto overflow-x-hidden mt-3 pt-0 pb-0"
+        <v-row
+          :class="{ 'd-none': !$store.state.showpaises }"
+        >
+          <v-col
+            v-for="continente in $store.state.continentes"  :key="continente.continente_id"
+            cols="3"
+            class="ma-0"
           >
+              <v-list
+                dense
+                dark
+                style="background-color:rgb(225,225,225,0.1);max-height:300px;border-radius:2px"
+                class="overflow-y-auto overflow-x-hidden mt-3 pt-0 pb-0"
+              >
 
-            <v-list-item-group
-              active-class='white--text'
-              color="primary"
-              style="min-width:200px"
-            >
-              <v-list-item
-                  v-for="liga in continente.ligas"
-                  :key="liga.league_id"
-
+                <v-list-item-group
+                  active-class='white--text'
+                  color="primary"
+                  style="min-width:200px"
                 >
-                  <v-list-item-content>
-                    <v-row
-                      no-gutters
-                      align="center"
+                  <v-list-item
+                      v-for="liga in continente.ligas"
+                      :key="liga.league_id"
+
                     >
-                      <v-col
-                        cols='2'
-                        class=""
-                      >
-                        <v-img
-                          max-height="40"
-                          max-width="20"
-                          :src="liga.logo"
-                          class="ml-2"
-                        ></v-img>
-                      </v-col>
-                      <v-col
-                        justify="center"
-                        style="font-size:14px;color:white"
-                        class="ml-4 font-weight-medium"
-                      >
-                        {{ liga.name }}
-                      </v-col>
-                    </v-row>
-                  </v-list-item-content>
-                </v-list-item>
-              </v-list-item-group>
+                      <v-list-item-content>
+                        <v-row
+                          no-gutters
+                          align="center"
+                        >
+                          <v-col
+                            cols='2'
+                            class=""
+                          >
+                            <v-img
+                              max-height="40"
+                              max-width="20"
+                              :src="liga.logo"
+                              class="ml-2"
+                            ></v-img>
+                          </v-col>
+                          <v-col
+                            justify="center"
+                            style="font-size:14px;color:white"
+                            class="ml-4 font-weight-medium"
+                          >
+                            {{ liga.name }}
+                          </v-col>
+                        </v-row>
+                      </v-list-item-content>
+                    </v-list-item>
+                  </v-list-item-group>
 
-            </v-list>
-          </v-col>
-    </v-row>
+                </v-list>
+              </v-col>
+        </v-row>
 
+      </v-row>
+    </v-col>
   </v-row>
+
 </template>
 
 <script>
   export default {
-    props: ['showpaises'],
     data: () => ({
       selectedItem: null,
 
       }),
-      watch: {
-        showpaises: function(newVal, oldVal) {
 
-        }
-      },
+
       methods: {
-        nullSelected: function(){
-          this.selectedItem=this.selectedItem;
-          console.log(this.selectedItem)
-        }
       }
     }
 </script>

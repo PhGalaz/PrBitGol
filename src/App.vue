@@ -5,11 +5,13 @@
 
       <v-row no-gutters>
         <v-col
+          id='drawer'
           :class="{ 'd-none': !$store.state.drawer }"
           cols='3'
+          style="overflow-y: hidden;background-color:#ECEFF1"
         >
           <v-row
-            style="background-color:red;height:500px">
+            style="background-color:#37474F;height:500px">
             hola
           </v-row>
         </v-col>
@@ -33,9 +35,9 @@
               <div style="height:2000px;background-color:#CFD8DC">
                 <v-container>
                   <v-row
-                  class="mt-1"
+                    class="mt-1"
                     :class="{ 'mt-8': !$store.state.showNavbar }"
-                    style="background-color:red;height:400px">
+                    style="background-color:red">
                   </v-row>
                 </v-container>
               </div>
