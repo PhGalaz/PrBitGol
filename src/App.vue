@@ -5,40 +5,47 @@
 
       <v-row no-gutters>
         <v-col
-          :class="{ 'd-none': $store.state.drawer }"
+          :class="{ 'd-none': !$store.state.drawer }"
           cols='3'
-
         >
           <v-row
-            style="background-color:red;height:400px">
+            style="background-color:red;height:500px">
             hola
           </v-row>
         </v-col>
         <v-col
+          :cols="$store.state.wholebody"
         >
           <v-card
             style="border-radius: 0 0 0 0"
           >
-            <div>
-              <v-img
-                class="portada"
-                gradient="to top right, rgba(128,208,199,.5), rgba(29,94,132,.6)"
+            <v-img
+              class="portada"
+              gradient="to top right, rgba(128,208,199,.5), rgba(29,94,132,.6)"
 
-                :class="{ 'esconderportada': !$store.state.showNavbar }"
-                src="gol.jpg"
-              >
-              </v-img>
-            </div>
+              :class="{ 'esconderportada': !$store.state.showNavbar }"
+              src="gol.jpg"
+            >
+            </v-img>
             <play-responsably></play-responsably>
-            <div style="height:2000px;background-color:#CFD8DC">
 
-            </div>
+
+              <div style="height:2000px;background-color:#CFD8DC">
+                <v-container>
+                  <v-row
+                  class="mt-1"
+                    :class="{ 'mt-8': !$store.state.showNavbar }"
+                    style="background-color:red;height:400px">
+                  </v-row>
+                </v-container>
+              </div>
+
           </v-card>
         </v-col>
       </v-row>
 
 
-  
+
 
 
     <navbar></navbar>

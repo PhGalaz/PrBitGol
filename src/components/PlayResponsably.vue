@@ -1,7 +1,7 @@
 <template>
   <v-row
     style="background-color:yellow;height:18px;color:#546E7A;font-size:10px"
-    class="font-weight-black"
+    class="font-weight-black ma-0"
     align="center"
     justify="center"
   >

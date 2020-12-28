@@ -933,6 +933,7 @@ export default new Vuex.Store({
         ]
       }
     ],
+    wholebody: 12,
     drawer: false,
     showNavbar: true,
     showligas: false,
@@ -944,6 +945,11 @@ export default new Vuex.Store({
   mutations: {
     sDrawer(state){
       state.drawer = !state.drawer
+      if(state.drawer){
+        state.wholebody = 9
+      } else {
+        state.wholebody = 12
+      }
     },
     setshowNavbar(state, value){
       state.showNavbar = value
