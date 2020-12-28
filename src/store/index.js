@@ -933,13 +933,113 @@ export default new Vuex.Store({
         ]
       }
     ],
+    drawer: false,
+    showNavbar: true,
+    showligas: false,
+    showcampeonatos: false,
+    showequipos: false,
+    showpaises: false,
+    lastScrollPosition: 0
   },
   mutations: {
-  },
+    sDrawer(state){
+      state.drawer = !state.drawer
+    },
+    setshowNavbar(state, value){
+      state.showNavbar = value
+    },
+    setlastScrollPosition(state, value){
+      state.lastScrollPosition = value
+    },
+    setshowligas(state, value){
+      state.showligas = value
+    },
+    setshowcampeonatos(state, value){
+      state.showcampeonatos = value
+    },
+    setshowequipos(state, value){
+      state.showequipos = value
+    },
+    setshowpaises(state, value){
+      state.showpaises = value
+    },
+    mouseOver(state, x){
+        if(x == 1){
+          if (state.showligas == true){
+            document.getElementById("tab1").style.background = "rgba(255,255,255,.05)"
+          } else {
+            state.showligas = !state.showligas;
+          }
+        }
+        else if (x == 2) {
+          if (state.showcampeonatos == true){
+            document.getElementById("tab2").style.background = "rgba(255,255,255,.05)"
+          } else {
+            state.showcampeonatos = !state.showcampeonatos;
+          }
+        }
+        else if (x == 3) {
+          if (state.showequipos == true){
+            document.getElementById("tab3").style.background = "rgba(255,255,255,.05)"
+          } else {
+            state.showequipos = !state.showequipos;
+          }
+        }
+        else if (x == 4) {
+          if (state.showpaises == true){
+            document.getElementById("tab4").style.background = "rgba(255,255,255,.05)"
+          } else {
+            state.showpaises = !state.showpaises;
+          }
+        }
+      },
+    leaveOver(state, x){
+        if(x == 1){
+          if (state.showligas == true){
+            state.showligas = false;
+            document.getElementById("tab1").style.background = ""
+          }
+        }
+        else if (x == 2) {
+          if (state.showcampeonatos == true){
+            state.showcampeonatos = false;
+            document.getElementById("tab2").style.background = ""
+          }
+        }
+        else if (x == 3) {
+          if (state.showequipos == true){
+            state.showequipos = false;
+            document.getElementById("tab3").style.background = ""
+          }
+        }
+        else if (x == 4) {
+          if (state.showpaises == true){
+            state.showpaises = false;
+            document.getElementById("tab4").style.background = ""
+          }
+        }
+      },
+      onScroll (state) {
+        const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
+
+        if (currentScrollPosition < 1) {
+            state.showNavbar = true
+          }
+
+          if (currentScrollPosition != 0 && (state.showligas == false && state.showcampeonatos == false && state.showequipos == false && state.showpaises == false)) {
+               state.showNavbar = false
+            }
+          if (currentScrollPosition != 0 && (state.showligas == true || state.showcampeonatos == true || state.showequipos == true || state.showpaises == true)) {
+              document.documentElement.scrollTop = state.lastScrollPosition
+              return
+            }
+
+        state.lastScrollPosition = currentScrollPosition
+      }
+    },
   actions: {
   },
   getters: {
-
   },
   modules: {
   }

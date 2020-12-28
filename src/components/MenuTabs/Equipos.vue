@@ -2,13 +2,13 @@
   <v-row
     class="todo"
     style="height=0px"
-    :class="{ 'Ligas': showequipos }"
+    :class="{ 'Ligas': $store.state.showequipos }"
     no-gutters
   >
 
     <v-row
       no-gutters
-      :class="{ 'd-none': !showequipos }"
+      :class="{ 'd-none': !$store.state.showequipos }"
       style="width:100vw"
     >
       <v-col
@@ -28,7 +28,7 @@
     </v-row>
 
     <v-row
-      :class="{ 'd-none': !showequipos }"
+      :class="{ 'd-none': !$store.state.showequipos }"
     >
       <v-col
         v-for="continente in $store.state.continentes"  :key="continente.continente_id"
@@ -38,7 +38,7 @@
           <v-list
             dense
             dark
-            style="background-color:rgb(255,255,255,0.05);max-height:300px;border-radius:2px"
+            style="background-color:rgb(225,225,225,0.1);max-height:300px;border-radius:2px"
             class="overflow-y-auto overflow-x-hidden mt-3 pt-0 pb-0"
           >
 
@@ -70,8 +70,8 @@
                       </v-col>
                       <v-col
                         justify="center"
-                        style="font-size:14px"
-                        class="ml-4"
+                        style="font-size:14px;color:white"
+                        class="ml-4 font-weight-medium"
                       >
                         {{ liga.name }}
                       </v-col>
@@ -114,17 +114,17 @@
     border-radius: 7px
     width: 8px
   ::-webkit-scrollbar-thumb
-    background-color: rgb(255,255,255,.225)
+    background-color: rgb(255,255,255,.2)
     border-radius: 20px
 
 
 
   .todo
-    background-image: linear-gradient(45deg, rgba(128,208,199) 0%, rgba(19,84,122,.9))
+    background-image: linear-gradient(45deg, rgba(128,208,199,.95) 0%, rgba(19,84,122,.95))
     height: 0px
   .Ligas
-    background-image: linear-gradient(45deg, rgba(128,208,199) 0%, rgba(19,84,122,.9))
-    height: 330px
+    background-image: linear-gradient(45deg, rgba(128,208,199,.95) 0%, rgba(19,84,122,.95))
+    height: 335px
 
 
 </style>

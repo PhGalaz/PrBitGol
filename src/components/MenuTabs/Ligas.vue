@@ -2,13 +2,13 @@
   <v-row
     class="todo"
     style="height=0px"
-    :class="{ 'Ligas': showligas }"
+    :class="{ 'Ligas': $store.state.showligas }"
     no-gutters
   >
 
     <v-row
       no-gutters
-      :class="{ 'd-none': !showligas }"
+      :class="{ 'd-none': !$store.state.showligas }"
       style="width:100vw"
     >
       <v-col
@@ -28,7 +28,7 @@
     </v-row>
 
     <v-row
-      :class="{ 'd-none': !showligas }"
+      :class="{ 'd-none': !$store.state.showligas }"
     >
       <v-col
         v-for="continente in $store.state.continentes"  :key="continente.continente_id"
@@ -89,21 +89,13 @@
 
 <script>
   export default {
-    props: ['showligas'],
     data: () => ({
       selectedItem: null,
 
       }),
-      watch: {
-        showligas: function(newVal, oldVal) {
 
-        }
-      },
+
       methods: {
-        nullSelected: function(){
-          this.selectedItem=this.selectedItem;
-          console.log(this.selectedItem)
-        }
       }
     }
 </script>
@@ -120,10 +112,10 @@
 
 
   .todo
-    background-image: linear-gradient(45deg, rgba(128,208,199) 0%, rgba(19,84,122,.9))
+    background-image: linear-gradient(45deg, rgba(128,208,199,.95) 0%, rgba(19,84,122,.95))
     height: 0px
   .Ligas
-    background-image: linear-gradient(45deg, rgba(128,208,199) 0%, rgba(19,84,122,.9))
+    background-image: linear-gradient(45deg, rgba(128,208,199,.95) 0%, rgba(19,84,122,.95))
     height: 335px
 
 

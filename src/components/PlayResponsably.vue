@@ -1,13 +1,13 @@
 <template>
   <v-row
-    style="background-color:yellow;height:18px;color:#546E7A;font-size:12px"
+    style="background-color:yellow;height:18px;color:#546E7A;font-size:10px"
     class="font-weight-black"
     align="center"
     justify="center"
   >
     <v-icon
-    small
-    color= "blue-grey darken-1"
+    x-small
+    color= "blue-grey darken-2"
     >
       mdi-comment-alert
     </v-icon>
