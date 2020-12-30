@@ -1,10 +1,11 @@
 <template>
   <v-row
-    style="background-color:yellow;height:18px;color:#546E7A;font-size:10px"
+    style="background-color:yellow;height:20px;color:#546E7A;font-size:10px"
     class="font-weight-black ma-0"
     align="center"
-    justify="center"
   >
+    <v-spacer></v-spacer>
+
     <v-icon
     x-small
     color= "blue-grey darken-2"
@@ -15,6 +16,23 @@
       PLAY RESPONSABLY
     </p>
 
+    <v-spacer></v-spacer>
+
+    <v-btn
+      x-small
+      icon
+      color= "blue-grey darken-2"
+    >
+      <v-icon>mdi-chevron-down</v-icon>
+    </v-btn>
+    <v-btn
+      x-small
+      icon
+      color= "blue-grey darken-2"
+      class="mr-5"
+    >
+      <v-icon>mdi-close-circle</v-icon>
+    </v-btn>
   </v-row>
 </template>
 

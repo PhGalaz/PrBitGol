@@ -30,7 +30,7 @@
             <play-responsably></play-responsably>
 
 
-              <div style="height:2000px;background-color:#CFD8DC">
+              <div style="height:2000px;background-color:#B0BEC5">
                 <v-container>
                   <now-playing></now-playing>
                 </v-container>
