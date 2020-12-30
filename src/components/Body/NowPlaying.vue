@@ -134,11 +134,11 @@
 <style lang="sass">
   ::-webkit-scrollbar
     background: transparent
-    border-radius: 12px
+    border-radius: 13px
     width: 13px
   ::-webkit-scrollbar-thumb
     background-color: rgba(255,255,255,.4)
-    border-radius: 20px
+    border-radius: 13px
 
   .whole
     background-color: #455A64
@@ -162,7 +162,7 @@
       left: calc(-1 * var(--borderWidth))
       height: calc(100% + var(--borderWidth) * 2)
       width: calc(100% + var(--borderWidth) * 2)
-      background: linear-gradient(60deg, #455A64 20%, rgba(29,94,132), rgba(39,205,122,.7), rgba(29,94,132), #455A64 80%)
+      background: linear-gradient(60deg, #455A64 20%, rgba(29,94,132) 30%, rgba(39,205,122,.7), rgba(29,94,132), #455A64 80%)
       border-radius: 4px
       z-index: -1
       animation: animatedgradient 4s ease  infinite
@@ -170,13 +170,13 @@
 
   @keyframes animatedgradient
     0%
-      background-position: 10% 50%
+      background-position: 5% 50%
 
 
 
 
     100%
-      background-position: 90% 50%
+      background-position: 95% 50%
 
 
 </style>

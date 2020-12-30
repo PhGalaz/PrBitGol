@@ -76,11 +76,11 @@
         </v-row>
         <v-row
           class="ma-0 pa-0"
-          style="background-color:#263238; height:44px"
+          style="background-color:#263238; max-height:44px"
           no-gutters
         >
-          <v-spacer></v-spacer>
-          <v-col class="ma-0">
+          <v-spacer style="height:10px"></v-spacer>
+          <v-col class="ma-0" style="height:10px">
             <v-tabs
               inactive
               background-color="transparent"
@@ -121,14 +121,14 @@
 
 
             </v-tabs>
-          </v-col>
-          <v-spacer></v-spacer>
+          </v-col style="height:10px">
+          <v-spacer style="height:10px"></v-spacer>
           <v-text-field
             class="ma-0 mr-1 mt-2"
             solo
             dense
             append-icon="mdi-magnify"
-            style="width:100px;transform:scale(0.75);transform-origin: left top"
+            style="width:100px;transform:scale(0.75);transform-origin: left top;height:40px"
             flat
             clearable
           ></v-text-field>

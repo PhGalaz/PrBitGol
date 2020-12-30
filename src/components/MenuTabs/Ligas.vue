@@ -46,7 +46,7 @@
               <v-list
                 dense
                 dark
-                style="background-color:rgb(225,225,225,0.1);max-height:300px;border-radius:2px"
+                style="background-color:rgb(0,0,0,0.3);max-height:300px;border-radius:2px"
                 class="overflow-y-auto overflow-x-hidden mt-3 pt-0 pb-0"
               >
 
