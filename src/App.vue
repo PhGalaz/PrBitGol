@@ -1,20 +1,18 @@
 <template>
   <v-app>
 
-
-
       <v-row no-gutters>
         <v-col
           id='drawer'
           :class="{ 'd-none': !$store.state.drawer }"
           cols='3'
-          style="overflow-y: hidden;background-color:#ECEFF1"
+          style="background-color:#ECEFF1"
         >
           <v-row
-            style="background-color:#37474F;height:500px">
-            hola
+            style="background-color:#37474F;height:100vh">
           </v-row>
         </v-col>
+
         <v-col
           :cols="$store.state.wholebody"
         >
@@ -34,11 +32,7 @@
 
               <div style="height:2000px;background-color:#CFD8DC">
                 <v-container>
-                  <v-row
-                    class="mt-1"
-                    :class="{ 'mt-8': !$store.state.showNavbar }"
-                    style="background-color:red">
-                  </v-row>
+                  <now-playing></now-playing>
                 </v-container>
               </div>
 
@@ -72,7 +66,9 @@
       'Equipos': require('@/components/MenuTabs/Equipos.vue').default,
       'Paises': require('@/components/MenuTabs/Paises.vue').default,
       'play-responsably': require('@/components/PlayResponsably.vue').default,
-      'navbar': require('@/components/NavBar.vue').default
+      'navbar': require('@/components/NavBar.vue').default,
+      'now-playing': require('@/components/Body/NowPlaying.vue').default,
+
     },
     data: () => ({
     }),
