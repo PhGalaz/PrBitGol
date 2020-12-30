@@ -9,6 +9,7 @@
       color="#37474F"
       style="width:100vw;max-height:170px;border:2px solid white;border-radius: 5px"
       class="overflow-y-auto overflow-x-hidden ma-0 pa-0"
+      flat
     >
 
       <v-list-item-group
@@ -17,11 +18,11 @@
         style="font-size:16px;color:white"
       >
         <v-row
+          id="fixtureinplay"
           v-for="fixture in $store.state.nowPlaying"
           :key="fixture.fixture_id"
           class="ma-0 pa-0"
           align="center"
-          style="background-image: linear-gradient(90deg, #263238 10%, rgba(29,94,132,.5) 50%)"
         >
 
           <v-col
@@ -106,16 +107,17 @@
 <style lang="sass">
   ::-webkit-scrollbar
     background: transparent
-    border-radius: 7px
-    width: 8px
+    border-radius: 12px
+    width: 13px
   ::-webkit-scrollbar-thumb
     background-color: rgb(255,255,255,.2)
     border-radius: 20px
 
   .whole
     background-color: transparent
-    transform: scale(.8)
+    transform: scale(.7)
     transform-origin: left top
-  .v-divider
+  #fixtureinplay:hover
+    background-color: rgba(255,255,255,0.1)
 
 </style>
