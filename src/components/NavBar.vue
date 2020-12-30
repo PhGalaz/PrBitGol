@@ -216,4 +216,6 @@
   .search
     transform: scale(0.8)
     transform-origin: left
+  .arriba
+    background-image: linear-gradient(90deg, #263238 10%, rgba(29,94,132) 50%)
 </style>

@@ -32,7 +32,7 @@
 
               <div style="height:2000px;background-color:#CFD8DC">
                 <v-container>
-                  <now-playing></now-playing>
+                  <now-playing style="z-index:1"></now-playing>
                 </v-container>
               </div>
 
@@ -105,6 +105,5 @@
   .rojo
     background:
       color: red
-  .arriba
-    background-image: linear-gradient(90deg, #263238 10%, rgba(29,94,132) 50%)
+
 </style>
