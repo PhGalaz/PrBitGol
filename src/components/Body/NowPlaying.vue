@@ -162,21 +162,21 @@
       left: calc(-1 * var(--borderWidth))
       height: calc(100% + var(--borderWidth) * 2)
       width: calc(100% + var(--borderWidth) * 2)
-      background: linear-gradient(60deg, transparent, transparent, rgba(29,94,132), transparent, rgba(39,205,122,.7), transparent, rgba(29,94,132), transparent)
+      background: linear-gradient(60deg, #455A64 20%, rgba(29,94,132), rgba(39,205,122,.7), rgba(29,94,132), #455A64 80%)
       border-radius: 4px
       z-index: -1
-      animation: animatedgradient 10s ease alternate infinite
-      background-size: 300% 300%
+      animation: animatedgradient 4s ease  infinite
+      background-size: 1000% 1000%
 
   @keyframes animatedgradient
     0%
-      background-position: 0% 50%
+      background-position: 10% 50%
 
-    50%
-      background-position: 100% 50%
+
+
 
     100%
-      background-position: 0% 50%
+      background-position: 90% 50%
 
 
 </style>
