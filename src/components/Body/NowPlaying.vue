@@ -6,40 +6,40 @@
   >
     <v-list
       dense
-      dark
-      style="background-color:rgb(0,0,0,0.3);border-radius:5px;width:100vw"
+      color="#37474F"
+      style="width:100vw;max-height:170px;border:2px solid white;border-radius: 5px"
       class="overflow-y-auto overflow-x-hidden ma-0 pa-0"
     >
 
       <v-list-item-group
         active-class='white--text'
         class="pa-0 ma-0"
+        style="font-size:16px;color:white"
       >
         <v-row
           v-for="fixture in $store.state.nowPlaying"
           :key="fixture.fixture_id"
           class="ma-0 pa-0"
-          style="background-color:#263238"
+          align="center"
+          style="background-image: linear-gradient(90deg, #263238 10%, rgba(29,94,132,.5) 50%)"
         >
 
           <v-col
             style="max-width:5%;min-width:5%"
-            class="ma-0 pa-0"
+            class="ma-0 pa-0 d-flex justify-center"
           >
             <v-img
               max-height="40"
               max-width="20"
-              align="center"
               src="https://media.api-sports.io/football/leagues/528.png"
             ></v-img>
           </v-col>
 
           <v-col
-            style="max-width:95%;min-width:95%"
+            style="max-width:80%;min-width:80%"
             class="ma-0 pa-0"
           >
             <v-list-item
-                style="background-image: linear-gradient(45deg, #546E7A 0%, #455A64)"
                 class="ma-0 pa-0"
               >
 
@@ -48,11 +48,11 @@
                 dense
                 align="center"
                 class="ma-0 pa-0 font-weight-medium"
-
+                style="color:white"
               >
 
                 <v-col
-                  style="max-width:35%;min-width:35%"
+                  style="max-width:44%;min-width:44%"
                   class="text-right"
                 >
                   {{ fixture.homeTeam }}
@@ -75,21 +75,21 @@
                 >
                   {{ fixture.goalsAwayTeam }}
                 </v-col>
-                <v-col style="max-width:35%;min-width:35%">
+                <v-col style="max-width:44%;min-width:44%">
                   {{ fixture.awayTeam }}
                 </v-col>
               </v-row>
-              <v-col
-                style="max-width:13%;min-width:13%;background-color:red;height:100%"
-                class="text-right ma-0 pa-0"
-              >
-                time
-              </v-col>
             </v-list-item>
             <v-divider
               class="ma-0 pa-0"
-              color="#263238"
+              dark
             ></v-divider>
+          </v-col>
+          <v-col
+            style="max-width:15%;min-width:15%"
+            class="text-center ma-0 pa-0"
+          >
+            time
           </v-col>
         </v-row>
         </v-list-item-group>
@@ -104,12 +104,18 @@
 </script>
 
 <style lang="sass">
+  ::-webkit-scrollbar
+    background: transparent
+    border-radius: 7px
+    width: 8px
+  ::-webkit-scrollbar-thumb
+    background-color: rgb(255,255,255,.2)
+    border-radius: 20px
+
   .whole
-    background-image: linear-gradient(45deg, rgba(128,208,199,.95) 0%, rgba(19,84,122,.95))
-    border-radius: 5px
+    background-color: transparent
     transform: scale(.8)
     transform-origin: left top
-    border: 2px solid #263238
   .v-divider
-    border: 2px solid
+
 </style>

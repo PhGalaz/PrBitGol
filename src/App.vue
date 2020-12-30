@@ -32,7 +32,7 @@
 
               <div style="height:2000px;background-color:#CFD8DC">
                 <v-container>
-                  <now-playing style="z-index:1"></now-playing>
+                  <now-playing></now-playing>
                 </v-container>
               </div>
 

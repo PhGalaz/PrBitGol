@@ -52,7 +52,7 @@
 
                 <v-list-item-group
                   active-class='white--text'
-                  color="primary"
+
                   style="min-width:200px"
                 >
                   <v-list-item
