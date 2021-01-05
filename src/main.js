@@ -5,8 +5,12 @@ import store from './store'
 import vuetify from './plugins/vuetify';
 import VueSplide from '@splidejs/vue-splide';
 import BootstrapVue from 'bootstrap-vue';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
 
-Vue.use( VueSplide, BootstrapVue );
+
+Vue.prototype.$http = axios
+Vue.use( VueSplide, BootstrapVue , VueAxios , axios );
 Vue.config.productionTip = false
 
 import 'bootstrap/dist/css/bootstrap.css'

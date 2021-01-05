@@ -2,6 +2,7 @@
   <v-row
     style="background-color:yellow;height:20px;color:#546E7A;font-size:10px"
     class="font-weight-black ma-0"
+    :class="{ 'd-none': !showResponsably }"
     align="center"
   >
     <v-spacer></v-spacer>
@@ -31,13 +32,24 @@
       color= "blue-grey darken-2"
       class="mr-5"
     >
-      <v-icon>mdi-close-circle</v-icon>
+      <v-icon
+        @click="responsablyOut()"
+      >mdi-close-circle</v-icon>
     </v-btn>
   </v-row>
 </template>
 
 <script>
-
+  export default {
+    data: () => ({
+      showResponsably: true
+    }),
+    methods:{
+      responsablyOut(){
+        this.showResponsably = false
+      }
+    }
+  }
 </script>
 
 <style lang="sass">

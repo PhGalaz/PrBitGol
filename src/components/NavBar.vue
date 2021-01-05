@@ -141,10 +141,7 @@
       </v-col>
     </v-row>
 
-    <Ligas
-      @mouseover.native="$store.commit('mouseOver', 1)"
-      @mouseleave.native="$store.commit('leaveOver', 1)"
-    ></Ligas>
+
     <Campeonatos
       @mouseover.native="$store.commit('mouseOver', 2)"
       @mouseleave.native="$store.commit('leaveOver', 2)"

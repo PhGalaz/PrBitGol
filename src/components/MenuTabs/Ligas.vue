@@ -23,23 +23,23 @@
             v-for="continente in $store.state.continentes"  :key="continente.continente_id"
             cols="3"
           >
-              <v-row
-                class="justify-center mt-1 font-weight-black"
-                align="center"
-                style="font-size:12px;color:rgb(255,255,255,0.6);height:0px"
-                no-gutters
-              >
-                {{ continente.name }}
-              </v-row>
+            <v-row
+              class="justify-center mt-1 font-weight-black"
+              align="center"
+              style="font-size:12px;color:rgb(255,255,255,0.6);height:0px"
+              no-gutters
+            >
+              {{ continente.name }}
+            </v-row>
 
-            </v-col>
+          </v-col>
         </v-row>
 
         <v-row
           :class="{ 'd-none': !$store.state.showligas }"
         >
           <v-col
-            v-for="continente in $store.state.continentes"  :key="continente.continente_id"
+            v-for="index in 4" :key="index"
             cols="3"
             class="ma-0"
           >
@@ -56,7 +56,7 @@
                   style="min-width:200px"
                 >
                   <v-list-item
-                      v-for="liga in continente.ligas"
+                      v-for="liga in $store.state.leagues"
                       :key="liga.league_id"
 
                     >

@@ -6,9 +6,12 @@
           id='drawer'
           :class="{ 'd-none': !$store.state.drawer }"
           cols='3'
-          style="background-color:#ECEFF1"
+          style="background-color:#ECEFF1;z-index:1"
+          @mouseover="$store.commit('leaveOver', 0)"
+          class="mt-10"
         >
           <v-row
+            class="ma-0 pa-0"
             style="background-color:#37474F;height:100vh">
           </v-row>
         </v-col>
@@ -30,9 +33,31 @@
             <play-responsably></play-responsably>
 
 
-              <div style="height:2000px;background-color:#B0BEC5">
+              <div style="height:2000px;background-color:#90A4AE">
                 <v-container>
-                  <now-playing></now-playing>
+
+                  <v-row>
+                    <v-col
+                      cols="9"
+                      class="ma-0 pa-0"
+                    >
+                      <now-playing
+                        class="ma-2 mt-4 mr-4 pa-0"
+                      ></now-playing>
+                    </v-col>
+                    <v-col
+                      cols="3"
+                      class="ma-0 pa-0"
+                    >
+
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <bets
+                      class="ma-2 mt-4 pa-0"
+                    ></bets>
+                  </v-row>
+
                 </v-container>
               </div>
 
@@ -51,12 +76,13 @@
   </v-app>
 </template>
 
+
+
+
+
+
 <script>
-
-
-
-
-
+  import axios from 'axios';
 
   export default {
     name: 'Home',
@@ -68,10 +94,14 @@
       'play-responsably': require('@/components/PlayResponsably.vue').default,
       'navbar': require('@/components/NavBar.vue').default,
       'now-playing': require('@/components/Body/NowPlaying.vue').default,
+      'bets': require('@/components/Body/Bets.vue').default
 
     },
     data: () => ({
     }),
+    created(){
+      this.getData();
+    },
     mounted () {
       window.addEventListener('scroll', this.onScroll)
     },
@@ -79,6 +109,12 @@
       window.removeEventListener('scroll', this.onScroll)
     },
     methods: {
+      async getData(){
+        let res = await this.$http.get('http://localhost:3000/leagues');
+        this.$store.commit('leagues', res);
+        res = await this.$http.get('http://localhost:3000/live');
+        this.$store.commit('nowPlaying', res);
+      },
      onScroll () {
        this.$store.commit('onScroll')
      }
