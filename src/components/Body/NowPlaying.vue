@@ -195,14 +195,12 @@
     transform: scale(1)
     transform-origin: left top
 
-  .v-list--dense
-    :hover
-      background: #455A64
+
 
 
 
   .gradient-border
-    --borderWidth:3px
+    --borderWidth:2px
     background: #455A64
     position: relative
     border-radius: var(--borderWidth)

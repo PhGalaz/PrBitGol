@@ -5,7 +5,19 @@
         dense
         align="center"
       >
-
+        <v-card
+          color="transparent"
+          class="mb-2 pa-0 font-weight-black"
+          style="height: 20px"
+          flat
+        >
+            <div
+              class="ma-0 ml-1 mx-5 pa-0"
+              style="font-size:22px;color:#ECEFF1;transform:scale(.7);transform-origen:left top"
+            >
+              ACTIVE BETS
+            </div>
+        </v-card>
         <v-row
           class="ma-0 pa-0"
           style="width:100%;background-color:transparent;border-radius:3px"
@@ -13,73 +25,12 @@
 
 
           <open-bets
-            class="ma-0 pa-0"
-            style="width:100%;border-radius:1px"
+            class="ma-1 mt-2 pa-0"
+            style="width:100%;border-radius:2px"
           ></open-bets>
-
-          <v-row
-            class="ma-0 pa-0 overflow-y-auto overflow-x-hidden"
-            style="width:100%;height:175px;background-color:transparent;border-radius:3px"
-          >
-            <v-list
-              class="ma-0 pa-0"
-              width="100%"
-              style="border-radius:2px"
-              color="transparent"
-              dense
-            >
-              <v-list-item
-                class="ma-0 mt-1 pa-0"
-                style="background-color:#37474F;border-radius:3px;border:2px solid #455A64"
-              >
-
-              </v-list-item>
-              <v-list-item
-                class="ma-0 mt-1 pa-0"
-                style="background-color:#37474F;border-radius:3px;border:2px solid #455A64"
-              >
-
-              </v-list-item>
-              <v-list-item
-                class="ma-0 mt-1 pa-0"
-                style="background-color:#37474F;border-radius:3px;border:2px solid #455A64"
-              >
-
-              </v-list-item>
-              <v-list-item
-                class="ma-0 mt-1 pa-0"
-                style="background-color:#37474F;border-radius:3px;border:2px solid #455A64"
-              >
-
-              </v-list-item>
-              <v-list-item
-                class="ma-0 mt-1 pa-0"
-                style="background-color:#37474F;border-radius:3px;border:2px solid #455A64"
-              >
-
-              </v-list-item>
-              <v-list-item
-                class="ma-0 mt-1 pa-0"
-                style="background-color:#37474F;border-radius:3px;border:2px solid #455A64"
-              >
-
-              </v-list-item>
-              <v-list-item
-                class="ma-0 mt-1 pa-0"
-                style="background-color:#37474F;border-radius:3px;border:2px solid #455A64"
-              >
-
-              </v-list-item>
-              <v-list-item
-                class="ma-0 mt-1 pa-0"
-                style="background-color:#37474F;border-radius:3px;border:2px solid #455A64"
-              >
-
-              </v-list-item>
-            </v-list>
           </v-row>
           <locked-bets
-            class="ma-1 mt-2 pa-0"
+            class="ma-1 mt-3 pa-0"
             style="width:100%;border-radius:2px"
           ></locked-bets>
         </v-row>
@@ -145,7 +96,7 @@
 
 
   .gradient-border-bets
-    --borderWidth:2px
+    --borderWidth:3px
     background: #455A64
     position: relative
     border-radius: 3px
