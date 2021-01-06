@@ -24,48 +24,51 @@
         </v-card>
 
         <v-row
-          class="ma-0 mt-1 pa-0 overflow-y-auto overflow-x-hidden"
-          style="width:100%;height:125px;background-color:#37474F;border-radius:3px"
+          class="ma-0 mt-1 mx-1 pa-0 overflow-y-auto overflow-x-hidden"
+          style="width:100%;height:125px;background-color:rgb(39,205,122);border-radius:3px"
+
         >
-        <v-list
-          class="ma-0 mt-2 mb-3 pa-0"
-          width="100%"
-          color="transparent"
-          dense
-        >
+          <v-list
+            class="ma-0 mt-2 mb-3 pa-0"
+            width="100%"
+            color="transparent"
+            align="center"
 
-          <v-list-item
-            class="ma-0 mt-1 pa-0"
-            style="background:#455A64;border-radius:45px 3px 3px 45px;width:90%"
+            dense
           >
-            <v-avatar
-              class="ma-1 pa-0"
-              size="35"
-            >
-              <img
-                src="https://cdn.vuetifyjs.com/images/john.jpg"
-                alt="John"
-              >
-            </v-avatar>
-          </v-list-item>
 
-          <v-list-item
-            class="ml-16 mt-1 pa-0 rigth"
-            style="background:#455A64;border-radius:3px 45px 45px 3px;width:90%"
-          >
-            <v-spacer></v-spacer>
-            <v-avatar
-              class="ma-1 pa-0"
-              size="35"
+            <v-list-item
+              class="ma-0 mt-1 pa-0"
+              style="background:#455A64;border-radius:45px 3px 3px 45px;width:90%"
             >
-              <img
-                src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
-                alt="John"
+              <v-avatar
+                class="ma-1 pa-0"
+                size="35"
               >
-            </v-avatar>
-          </v-list-item>
+                <img
+                  src="https://cdn.vuetifyjs.com/images/john.jpg"
+                  alt="John"
+                >
+              </v-avatar>
+            </v-list-item>
 
-        </v-list>
+            <v-list-item
+              class="ma-0 mt-1 pa-0 rigth"
+              style="background:#455A64;border-radius:3px 45px 45px 3px;width:90%"
+            >
+              <v-spacer></v-spacer>
+              <v-avatar
+                class="ma-1 pa-0"
+                size="35"
+              >
+                <img
+                  src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
+                  alt="John"
+                >
+              </v-avatar>
+            </v-list-item>
+
+          </v-list>
         </v-row>
       </v-row>
 
