@@ -43,16 +43,15 @@
 
             >
               <v-list-item
-                class="ma-0 pa-0 fixtureinplay"
+                class="ma-0 pa-0"
                 align="center"
-                style="height:100%"
                 dense
               >
                 <v-row
-                  class="ma-0 pa-0 fixtureinplay justify-center"
+                  class="ma-0 pa-0 justify-center"
                   align="center"
                   dense
-                  style="height:100%"
+                  no-gutters
                 >
                   <v-col
                     style="width:6%;max-width:6%"
