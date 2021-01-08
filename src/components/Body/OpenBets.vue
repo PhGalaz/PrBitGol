@@ -39,69 +39,160 @@
 
 
 
-
-
-
           <v-list-item
-            class="ma-0 ml-3 mt-1 pa-0"
-            style="background:#546E7A;border-radius:45px;width:95%"
-            align="center"
+            class="ma-0 mt-2 mr-6 pa-0"
+            style="background: linear-gradient(transparent 5%, #546E7A 5%, #546E7A 95%, transparent 95%);border-radius:45px;width:95%"
             dense
           >
             <v-row
-              class="ma-1 pa-0"
-              style="background:linear-gradient(transparent 10%, #455A64 10%, #455A64 90%, transparent 90%);border-radius:45px"
+              class="ma-0 pa-0"
+              style="border:3px solid #546E7A;background-color:#455A64;max-width:409px;min-width:409px;border-radius:45px"
             >
-              <v-avatar
-                class="ma-0 pa-0"
-                size="50"
-                style="border:1px solid #455A64"
-              >
-                <img
-                  src="https://cdn.vuetifyjs.com/images/john.jpg"
-                  alt="John"
-                >
-              </v-avatar>
               <v-row
+                style="background-color:#78909C;border-radius:45px;max-width:130px;min-width:130px;font-size:13px;color:#CFD8DC"
                 class="ma-0 pa-0 font-weight-bold"
-                style="font-size:13px;color:#CFD8DC;max-width:40px;min-width:40px"
                 align="center"
-                justify="center"
               >
-              1.23
+                <v-avatar
+                  class="ma-0 pa-0"
+                  size="57"
+                  style="border:0px solid #CFD8DC"
+                >
+                  <img
+                    src="https://cdn.vuetifyjs.com/images/john.jpg"
+                    alt="John"
+                  >
+                </v-avatar>
+                <v-row
+                  style="font-size:23px;color:#CFD8DC"
+                  class="ma-0 pa-0 font-weight-black"
+                  align="center"
+                  justify="center"
+                >
+                  1.23
+                </v-row>
               </v-row>
+
 
               <v-row
                 class="ma-0 pa-0"
-                style="background-color:red;border-radius:45px;max-width:265px;min-width:265px"
+                style="border:0px solid #78909C;background-color:#455A64;border-radius:45px;max-width:270px;min-width:270px"
               >
                 <v-row
                   class="ma-0 pa-0"
-                  style="background-color:#78909C;border-radius:45px;color:#CFD8DC;font-size:16px"
-                  align="center"
+                  style="background-color:#455A64;border-radius:45px;max-width:260px;min-width:260px"
                 >
-                  Palestino
                   <v-spacer></v-spacer>
+
+                  <v-row
+                    class="ma-0 pr-3 pa-0 font-weight-bold text-right"
+                    style="color:#CFD8DC;font-size:14px;max-width:120px;min-width:120px"
+                    align="center"
+
+                  >
+                    Universidad de Concepcion
+                  </v-row>
+                  <v-spacer></v-spacer>
+
+
                   <v-row
                     class="ma-0 pa-0"
-                    style="background-color:#CFD8DC;border-radius:45px;max-width:48px;min-width:48px"
+                    style="background-color:#CFD8DC;border-radius:45px;max-width:62px;min-width:62px"
                     align="center"
                     justify="center"
                   >
                     <v-img
                       class="ma-0 pa-0"
                       max-height="35"
-                      max-width="25"
+                      max-width="35"
                       src="https://media.api-sports.io/football/teams/2324.png"
                     ></v-img>
                   </v-row>
+                  <v-icon
+                    class="ml-2"
+                    color= "#CFD8DC"
+                  >
+                    mdi-alpha-t-circle
+                  </v-icon>
                 </v-row>
+
 
               </v-row>
 
 
             </v-row>
 
+
+
+
+
+
+
+
+                      <v-spacer></v-spacer>
+                      <v-row
+                        class="ma-0 pa-0"
+                        style="border:3px solid rgb(39,205,122);background-color:#455A64;max-width:418px;min-width:418px;border-radius:45px"
+                      >
+                        <v-row
+                          class="ma-0 pa-0"
+                          style="background-color:#CFD8DC;border-radius:45px;max-width:64px;min-width:64px"
+                          align="center"
+                          justify="center"
+                        >
+                          <v-img
+                            class="ma-0 pa-0"
+                            max-height="35"
+                            max-width="35"
+                            src="https://media.api-sports.io/football/teams/2318.png"
+                          ></v-img>
+                        </v-row>
+                        <v-row
+                          class="ma-0 pl-6 pa-0 font-weight-bold text-left"
+                          style="color:#CFD8DC;font-size:17px;max-width:140px;min-width:140px"
+                          align="center"
+                        >
+                          Palestino
+                        </v-row>
+                        <v-spacer></v-spacer>
+
+                        <v-row
+                          class="ma-0 pa-0"
+                          style="background-color:rgb(39,205,122);max-width:130px;min-width:130px;border-radius:45px"
+                        >
+                          <v-spacer></v-spacer>
+                          <v-row
+                            style="font-size:23px;color:#CFD8DC"
+                            class="ma-0 pa-0 font-weight-black"
+                            align="center"
+                            justify="center"
+                          >
+                            1.81
+                          </v-row>
+                          <v-spacer></v-spacer>
+                          <v-row
+                            class="ma-1 pa-0"
+                            style="background-color:#455A64;border-radius:45px;max-width:55px;min-width:55px"
+                            justify="center"
+                          >
+                            <v-avatar
+                              class="ma-0 pa-0"
+                              size="51"
+                              style="transform:scale(.85);transform-origin:center"
+                            >
+
+                                <v-icon
+                                  color="rgb(39,205,122)"
+                                  class="ma-0 pa-0"
+                                  medium
+                                >mdi-lock-open-variant</v-icon>
+
+                            </v-avatar>
+
+
+                          </v-row>
+                        </v-row>
+                      </v-row>
 
 
 
@@ -112,199 +203,67 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
             <v-list-item
-              class="ma-0 ml-6 mt-1 pa-0"
-              style="background:#90A4AE;
-                border:2px solid transparent;
-                border-radius:45px;
-                width:95%"
+              class="ma-0 mt-2 mr-6 pa-0"
+              style="background: linear-gradient(transparent 5%, #546E7A 5%, #546E7A 95%, transparent 95%);border-radius:45px;width:95%"
               dense
             >
               <v-row
                 class="ma-0 pa-0"
-                style="background:linear-gradient(transparent 10%, #455A64 10%, #455A64 90%, transparent 90%);border-radius:45px;max-width:360px;min-width:360px"
+                style="border:3px solid #546E7A;background-color:#455A64;max-width:409px;min-width:409px;border-radius:45px"
               >
                 <v-row
-                  class="ma-0 pa-0"
-                  style="background-color:#455A64;border-radius:90px;max-width:60px;min-width:60px"
+                  style="background-color:#78909C;border-radius:45px;max-width:130px;min-width:130px;font-size:13px;color:#CFD8DC"
+                  class="ma-0 pa-0 font-weight-bold"
+                  align="center"
                 >
                   <v-avatar
                     class="ma-0 pa-0"
-                    size="50"
+                    size="57"
+                    style="border:0px solid #CFD8DC"
                   >
                     <img
                       src="https://cdn.vuetifyjs.com/images/john.jpg"
                       alt="John"
                     >
                   </v-avatar>
-
-                </v-row>
-                <v-row
-                  class="ma-0 pa-0 font-weight-bold"
-                  style="font-size:13px;color:#78909C;background-color:transparent;border-radius:45px;max-width:40px;min-width:40px"
-                  align="center"
-                  justify="center"
-                >
-                  1.23
-                </v-row>
-                <v-row
-                  class="ma-0 pa-0"
-                  style="background-color:#455A64;border-radius:45px;max-width:260px;min-width:260px"
-                >
                   <v-row
-                    class="ma-0 pa-0"
-                    style="background-color:#78909C;border-radius:45px;max-width:220px;min-width:220px"
+                    style="font-size:23px;color:#CFD8DC"
+                    class="ma-0 pa-0 font-weight-black"
+                    align="center"
+                    justify="center"
                   >
-
-                  </v-row>
-                  <v-row
-                    class="ma-0 pa-0"
-                    style="background-color:#455A64;max-width:40px;min-width:40px;border-radius:0 45px 45px 0"
-                  >
-                    <v-icon
-                      class="ml-1"
-                      color= "#78909C"
-                    >
-                      mdi-alpha-t-circle
-                    </v-icon>
-                  </v-row>
-                </v-row>
-              </v-row>
-
-
-              <v-row
-                class="ma-0 pa-0"
-                style="background-color:;max-width:25px;min-width:25px"
-              >
-
-              </v-row>
-
-
-              <v-row
-                class="ma-0 pa-0"
-                style="background:linear-gradient(transparent 10%, rgb(39,205,122) 10%, rgb(39,205,122) 90%, transparent 90%);border-radius:45px"
-                height="100%"
-              >
-                <v-row
-                  class="ma-0 pa-0"
-                  style="background-color:#455A64;border-radius:45px"
-                >
-                  <v-row
-                    class="ma-0 pa-0"
-                    style="background-color:#78909C;border-radius:45px;max-width:220px;min-width:220px"
-                  >
-
-                  </v-row>
-                  <v-row
-                    class="ma-0 pa-0"
-                    style="background-color:#455A64;border-radius:0 45px 45px 0"
-                  >
-
+                    1.23
                   </v-row>
                 </v-row>
 
 
                 <v-row
-                  class="ma-0 my-1 pa-0 font-weight-bold"
-                  style="font-size:13px;background-color:transparent;max-width:40px;min-width:40px;border-radius:45px 0 0 45px"
-                  align="center"
-                  justify="center"
-                >
-                  1.81
-                </v-row>
-                <v-row
                   class="ma-0 pa-0"
-                  style="background-color:rgb(39,205,122);border-radius:45px;max-width:49px;min-width:49px"
-                  justify="center"
-                >
-                  <v-avatar
-                    class="ma-1 pa-0"
-                    size="45"
-                    style="transform:scale(.85);transform-origin:center"
-                  >
-                    <v-avatar
-                      class="ma-1 pa-0"
-                      size="45"
-                      style="background-color:rgb(39,205,122);transform:scale(.95);transform-origin:center"
-                    >
-                      <v-icon
-                        color="#37474F"
-                        class="ma-0 pa-0"
-                        medium
-                      >mdi-lock-open-variant</v-icon>
-                    </v-avatar>
-                  </v-avatar>
-
-
-                </v-row>
-              </v-row>
-
-            </v-list-item>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <v-list-item
-              class="ma-0 mt-2 pa-0"
-              style="background:#546E7A;border-radius:45px;width:95%"
-              dense
-            >
-              <v-row
-                class="ma-0 pa-0"
-                style="background-color:#78909C;max-width:400px;min-width:400px;border-radius:45px"
-              >
-                <v-avatar
-                  class="ma-0 pa-0"
-                  size="60"
-                  style="border:5px solid #455A64;z-index:1"
-                >
-                  <img
-                    src="https://cdn.vuetifyjs.com/images/john.jpg"
-                    alt="John"
-                  >
-                </v-avatar>
-                <v-row
-                  class="ma-0 pa-0"
-                  style="max-width:40px;min-width:40px"
-                >
-
-                </v-row>
-                <v-row
-                  class="ma-0 pa-0"
-                  style="border:3px solid #78909C;background-color:#455A64;border-radius:45px;max-width:300px;min-width:300px"
+                  style="border:0px solid #78909C;background-color:#455A64;border-radius:45px;max-width:270px;min-width:270px"
                 >
                   <v-row
                     class="ma-0 pa-0"
-                    style="background-color:#455A64;border-radius:45px;max-width:290px;min-width:290px"
+                    style="background-color:#455A64;border-radius:45px;max-width:260px;min-width:260px"
                   >
                     <v-spacer></v-spacer>
 
                     <v-row
                       class="ma-0 pr-3 pa-0 font-weight-bold text-right"
-                      style="color:#CFD8DC;font-size:14px;max-width:150px;min-width:150px"
+                      style="color:#CFD8DC;font-size:14px;max-width:120px;min-width:120px"
                       align="center"
 
                     >
@@ -315,20 +274,20 @@
 
                     <v-row
                       class="ma-0 pa-0"
-                      style="background-color:#90A4AE;border-radius:45px;max-width:60px;min-width:60px"
+                      style="background-color:#CFD8DC;border-radius:45px;max-width:62px;min-width:62px"
                       align="center"
                       justify="center"
                     >
                       <v-img
                         class="ma-0 pa-0"
                         max-height="35"
-                        max-width="30"
+                        max-width="35"
                         src="https://media.api-sports.io/football/teams/2324.png"
                       ></v-img>
                     </v-row>
                     <v-icon
-                      class="ml-1 mr-3"
-                      color= "#90A4AE"
+                      class="ml-2"
+                      color= "#CFD8DC"
                     >
                       mdi-alpha-t-circle
                     </v-icon>
@@ -343,85 +302,76 @@
 
 
 
-                <v-spacer></v-spacer>
 
 
-                <v-row
-                  class="ma-0 pa-0"
-                  style="border-radius:45px"
-                  height="100%"
-                >
-                    <v-spacer></v-spacer>
 
-                    <v-row
-                      class="ma-0 pa-0"
-                      style="background-color:rgb(39,205,122);border:0px solid rgb(39,205,122);border-radius:45px;height:100%;max-width:380px;min-width:380px"
-                    >
-                      <v-row
-                        class="ma-0 pa-0"
-                        style="border-radius:45px"
-                      >
+
+                        <v-spacer></v-spacer>
                         <v-row
                           class="ma-0 pa-0"
-                          style="border:2px solid rgb(39,205,122);background-color:#455A64;border-radius:45px;max-width:310px;min-width:310px"
+                          style="background-color:#455A64;max-width:418px;min-width:418px;border-radius:45px"
                         >
                           <v-row
-                            class="ma-1 pa-0"
-                            style="background-color:#CFD8DC;border-radius:45px;max-width:50px;min-width:50px"
+                            class="ma-0 pa-0"
+                            style="background-color:#CFD8DC;border-radius:45px;max-width:64px;min-width:64px"
                             align="center"
                             justify="center"
                           >
                             <v-img
                               class="ma-0 pa-0"
                               max-height="35"
-                              max-width="30"
+                              max-width="35"
                               src="https://media.api-sports.io/football/teams/2318.png"
                             ></v-img>
                           </v-row>
                           <v-row
                             class="ma-0 pl-6 pa-0 font-weight-bold text-left"
-                            style="color:rgb(39,205,122);font-size:17px;max-width:130px;min-width:130px"
+                            style="color:#CFD8DC;font-size:17px;max-width:140px;min-width:140px"
                             align="center"
                           >
                             Palestino
                           </v-row>
+                          <v-spacer></v-spacer>
 
-
-
-
-
-                        </v-row>
-                        <v-spacer></v-spacer>
-                        <v-row
-                          class="ma-1 pa-0"
-                          style="background-color:#455A64;border-radius:45px;max-width:55px;min-width:55px"
-                          justify="center"
-                        >
-                          <v-avatar
+                          <v-row
                             class="ma-0 pa-0"
-                            size="55"
-                            style="transform:scale(.85);transform-origin:center"
+                            style="background-color:rgb(39,205,122);max-width:130px;min-width:130px;border-radius:45px"
                           >
-
-                              <v-icon
-                                color="rgb(39,205,122)"
+                            <v-spacer></v-spacer>
+                            <v-row
+                              style="font-size:23px;color:#CFD8DC"
+                              class="ma-0 pa-0 font-weight-black"
+                              align="center"
+                              justify="center"
+                            >
+                              1.81
+                            </v-row>
+                            <v-spacer></v-spacer>
+                            <v-row
+                              class="ma-1 pa-0"
+                              style="background-color:#455A64;border-radius:45px;max-width:55px;min-width:55px"
+                              justify="center"
+                            >
+                              <v-avatar
                                 class="ma-0 pa-0"
-                                medium
-                              >mdi-lock-open-variant</v-icon>
+                                size="53"
+                                style="transform:scale(.85);transform-origin:center"
+                              >
 
-                          </v-avatar>
+                                  <v-icon
+                                    color="rgb(39,205,122)"
+                                    class="ma-0 pa-0"
+                                    medium
+                                  >mdi-lock-open-variant</v-icon>
+
+                              </v-avatar>
 
 
+                            </v-row>
+                          </v-row>
                         </v-row>
-                      </v-row>
 
 
-
-
-
-                  </v-row>
-
-                </v-row>
 
             </v-list-item>
 

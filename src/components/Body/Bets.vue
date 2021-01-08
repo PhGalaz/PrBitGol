@@ -30,7 +30,7 @@
           ></open-bets>
           </v-row>
           <locked-bets
-            class="ma-1 mt-3 pa-0"
+            class="ma-1 mt-1 pa-0"
             style="width:100%;border-radius:2px"
           ></locked-bets>
         </v-row>
