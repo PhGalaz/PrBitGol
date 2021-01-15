@@ -6,36 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     leagues: [],
-    apuestas: [
-      {
-        apuesta_id: '000000001',
-        fixture_id: '647842',
-        initial_amount: '0.0987',
-        factor: "1.2",
-
-      },
-      {
-        apuesta_id: '000000002',
-        fixture_id: '647842',
-        initial_amount: '0.87',
-        factor: "3.2",
-
-      },
-      {
-        apuesta_id: '000000003',
-        fixture_id: '647842',
-        initial_amount: '0.0987',
-        factor: "1.2",
-
-      },
-      {
-        apuesta_id: '000000004',
-        fixture_id: '647842',
-        initial_amount: '0.0987',
-        factor: "1.2",
-
-      }
-    ],
+    bets: [],
     fictures: {
       '647042': {
         fixture_id: '647842',
@@ -1443,6 +1414,10 @@ export default new Vuex.Store({
     lastScrollPosition: 0
   },
   mutations: {
+    bets(state, res){
+      const bets = res.data.bets
+      state.bets = bets
+    },
     nowPlaying(state, res){
       const fixtures = res.data.livegames.fixtures
       state.nowPlaying = fixtures

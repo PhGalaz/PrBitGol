@@ -36,11 +36,15 @@
             two-lines
             dense
           >
+
+
             <v-list-item
-              class="ma-0 mt-4 pa-0"
+              v-for="bet in $store.state.bets"
+              :key="bet.bet_id"
             >
               <le
-                class="ma-0 ml-1 mr-10 pa-0"
+                :bet="bet"
+                class="ma-0 mt-2 ml-1 mr-10 pa-0"
               ></le>
             </v-list-item>
 
@@ -67,169 +71,6 @@
 
 
 
-
-
-
-          <v-list-item
-            class="ma-0 mt-2 mr-6 pa-0"
-            style="background: linear-gradient(transparent 5%, #546E7A 5%, #546E7A 95%, transparent 95%);border-radius:45px;width:95%"
-            dense
-          >
-            <v-row
-              class="ma-0 pa-0"
-              style="border:3px solid #78909C;background-color:#455A64;max-width:339px;min-width:339px;border-radius:45px"
-            >
-            <v-avatar
-              class="ma-0 pa-0"
-              size="57"
-              style="border:0px solid #CFD8DC"
-            >
-              <img
-                src="https://cdn.vuetifyjs.com/images/john.jpg"
-                alt="John"
-              >
-            </v-avatar>
-
-
-              <v-row
-                class="ma-0 pa-0"
-                style="border:0px solid #78909C;background-color:#455A64;border-radius:45px;max-width:270px;min-width:270px"
-              >
-                <v-row
-                  class="ma-0 pa-0"
-                  style="background-color:#455A64;border-radius:45px;max-width:260px;min-width:260px"
-                >
-                  <v-spacer></v-spacer>
-
-                  <v-row
-                    class="ma-0 pr-1 pa-0 font-weight-bold text-right"
-                    style="color:#CFD8DC;font-size:14px;max-width:120px;min-width:120px"
-                    align="center"
-
-                  >
-                    Universidad de Concepcion
-                  </v-row>
-                  <v-spacer></v-spacer>
-
-
-                  <v-row
-                    class="ma-0 pa-0"
-                    style="border:3px solid #455A64;background-color:#CFD8DC;border-radius:45px;max-width:60px;min-width:60px"
-                    align="center"
-                    justify="center"
-                  >
-                    <v-img
-                      class="ma-0 pa-0"
-                      max-height="35"
-                      max-width="35"
-                      src="https://media.api-sports.io/football/teams/2324.png"
-                    ></v-img>
-                  </v-row>
-                  <v-icon
-                    class="ml-2"
-                    color= "#CFD8DC"
-                  >
-                    mdi-alpha-t-circle
-                  </v-icon>
-                </v-row>
-
-
-              </v-row>
-
-
-            </v-row>
-
-
-
-
-
-
-
-
-                      <v-spacer></v-spacer>
-                      <v-row
-                        class="ma-0 pa-0"
-                        style="border:1px solid rgb(39,205,122);background-color:rgb(39,205,122);border-radius:45px;max-width:445px;min-width:445px"
-                      >
-                        <v-row
-                          class="ma-0 pa-0"
-                          style="background-color:#90A4AE;border-radius:45px"
-                        >
-                          <v-row
-                            class="ma-0 pa-0"
-                            style="background-color:rgb(39,205,122);border-radius:45px"
-                          >
-                            <v-spacer></v-spacer>
-                            <v-row
-                              class="ma-0 ml-1 pa-0 font-weight-bold"
-                              style="background-color:rgb(39,205,122);border-radius:45px;max-width:60px;min-width:60px;font-size:18px;color:#455A64"
-                              align="center"
-                              justify="center"
-                            >
-                              4.34
-                            </v-row>
-
-                            <v-row
-                              class="ma-0 pa-0"
-                              style="border:3px solid #455A64;background-color:#455A64;border-radius:45px;max-width:320px;min-width:320px"
-                            >
-                              <v-row
-                                class="ma-0 pa-0"
-                                style="background-color:#90A4AE;border-radius:45px;max-width:56px;min-width:56px"
-                                align="center"
-                                justify="center"
-                              >
-                                <v-img
-                                  class="ma-0 pa-0"
-                                  max-height="35"
-                                  max-width="30"
-                                  src="https://media.api-sports.io/football/teams/2318.png"
-                                ></v-img>
-                              </v-row>
-                              <v-row
-                                class="ma-0 pl-6 pa-0 font-weight-bold text-left"
-                                style="color:#CFD8DC;font-size:17px;max-width:160px;min-width:160px"
-                                align="center"
-                              >
-                                Universidad de Concepcion
-                              </v-row>
-                            </v-row>
-
-                          </v-row>
-
-
-                        </v-row>
-
-
-
-
-                          <v-row
-                            class="ma-1 pa-0"
-                            style="background-color:#455A64;border-radius:45px;max-width:50px;min-width:50px"
-                            justify="center"
-                          >
-                            <v-avatar
-                              class="ma-0 pa-0"
-                              size="52"
-                              style="transform:scale(.85);transform-origin:center"
-                            >
-
-                                <v-icon
-                                  color="#CFD8DC"
-                                  class="ma-0 pa-0"
-                                  medium
-                                >mdi-lock-open-variant</v-icon>
-
-                            </v-avatar>
-
-
-                          </v-row>
-
-                      </v-row>
-
-
-
-          </v-list-item>
 
 
 

@@ -114,6 +114,8 @@
         this.$store.commit('leagues', res);
         res = await this.$http.get('http://localhost:3000/live');
         this.$store.commit('nowPlaying', res);
+        res = await this.$http.get('http://localhost:3000/bets');
+        this.$store.commit('bets', res);
       },
      onScroll () {
        this.$store.commit('onScroll')

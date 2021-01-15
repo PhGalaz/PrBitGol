@@ -33,9 +33,8 @@
             class="ma-0 pr-1 pa-0 font-weight-bold text-right"
             style="color:#CFD8DC;font-size:14px;max-width:120px;min-width:120px"
             align="center"
-
           >
-            Universidad de Concepcion
+            {{ bet.fixture[0].homeTeam[0].team_name}}
           </v-row>
           <v-spacer></v-spacer>
 
@@ -45,7 +44,7 @@
               class="ma-0 pa-0"
               max-height="35"
               max-width="35"
-              src="https://media.api-sports.io/football/teams/2324.png"
+              :src="bet.fixture[0].homeTeam[0].logo"
             ></v-img>
 
           <v-icon
@@ -74,7 +73,7 @@
               >
                 <v-row
                   class="ma-0 pa-0 font-weight-bold"
-                  style="color:#CFD8DC"
+
                   align="center"
                 >
 
@@ -85,17 +84,27 @@
                       src="bch_b_small.png"
                       class="ml-8 mr-1"
                     ></v-img>
-                    0.023
+                    <p
+                      style="color:#CFD8DC"
+                      class="ma-0 pa-0"
+                    >{{ ava_amount }}</p>
+
+                    <p
+                      style="color:#455A64"
+                      class="ma-0 pa-0"
+                    >/USD ${{ ava_usd_amount }}</p>
 
                   <v-row
-                    class="ma-0 mr-8 pa-0 font-weight-medium"
-                    style="height:20px;color:rgb(255,125,71)"
+                    class="ma-0 mb-0 mr-8 pa-0 font-weight-medium"
+                    style="height:20px;color:#CFD8DC;font-size:10px"
                     justify="center"
-                    align="center"
+                
                   >
                     <v-spacer></v-spacer>
 
-                    fecha
+                    <p
+                      style="color:#CFD8DC"
+                    >0.0032 TAKEN</p>
 
                   </v-row>
                 </v-row>
@@ -116,11 +125,9 @@
                   <v-row
                     class="ma-0 pa-0 mx-8 font-weight-medium"
                     style="background-color:transparent;width:100%;font-size:10px"
+                    justify="center"
                   >
-                    <p
-                      style="color:rgb(39,205,122)"
-                    >AVAILABLE 0.02</p>
-                    <v-spacer></v-spacer>
+
                     <p
                       style="color:#CFD8DC"
                     >0.0032 TAKEN</p>
@@ -135,7 +142,7 @@
 
               <v-row
                 class="ma-0 pa-0"
-                style="border:1px solid #CFD8DC;background-color:#CFD8DC;border-radius:45px;max-width:395px;min-width:395px"
+                style="border:1px solid #CFD8DC;background-color:#CFD8DC;border-radius:45px;max-width:329px;min-width:329px"
               >
                 <v-row
                   class="ma-0 pa-0"
@@ -146,14 +153,7 @@
                     style="background-color:#CFD8DC;border-radius:45px"
                   >
                     <v-spacer></v-spacer>
-                    <v-row
-                      class="ma-0 pa-0 font-weight-bold"
-                      style="border-radius:45px;max-width:60px;min-width:60px;font-size:18px;color:#455A64"
-                      align="center"
-                      justify="center"
-                    >
-                      4.34
-                    </v-row>
+
 
                     <v-row
                       class="ma-0 pa-0"
@@ -165,7 +165,7 @@
                           class="ma-0 ml-3 pa-0"
                           max-height="35"
                           max-width="30"
-                          src="https://media.api-sports.io/football/teams/2318.png"
+                          :src="bet.fixture[0].awayTeam[0].logo"
                         ></v-img>
 
                       <v-row
@@ -173,7 +173,7 @@
                         style="color:#CFD8DC;font-size:17px;max-width:140px;min-width:140px"
                         align="center"
                       >
-                        Universidad de Concepcion
+                        {{ bet.fixture[0].awayTeam[0].team_name}}
                       </v-row>
                     </v-row>
 
@@ -210,10 +210,27 @@
               </v-row>
           </v-list-item>
 
+
 </template>
 
 <script>
+export default {
+  props:["bet"],
+  data:{
 
+  },
+  computed: {
+      // a computed getter
+      ava_amount: function () {
+        // `this` points to the vm instance
+        return this.bet.init_amount / 100000000
+      },
+      ava_usd_amount: function () {
+        var amount = this.ava_amount * 529;
+        return amount.toFixed(2);
+      },
+    },
+  }
 </script>
 
 <style lang="sass">
