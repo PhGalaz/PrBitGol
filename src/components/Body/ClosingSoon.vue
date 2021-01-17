@@ -87,4 +87,7 @@
       background-position: 5% 50%
     100%
       background-position: 95% 50%
+
+
+      
 </style>

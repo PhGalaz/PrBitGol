@@ -41,11 +41,19 @@
             <v-list-item
               v-for="bet in $store.state.bets"
               :key="bet.bet_id"
+
             >
-              <le
-                :bet="bet"
-                class="ma-0 mt-2 ml-1 mr-10 pa-0"
-              ></le>
+              <v-row
+                class="ma-0 mt-2 pa-0 gradient-border0"
+                style="border-radius:45px"
+              >
+                <le
+                  :bet="bet"
+                  class="ma-0 pa-0"
+                  style="background: linear-gradient(transparent 10%, rgba(69, 90, 100,0.5) 10%, rgba(69, 90, 100,0.5) 90%, transparent 90%);border-radius:45px;border:0px solid #455A64"
+                ></le>
+              </v-row>
+
             </v-list-item>
 
 
@@ -193,7 +201,7 @@
       width: calc(100% + var(--borderWidth) * 2)
       background: linear-gradient(60deg, #37474F, #37474F)
       border-radius: 2px
-      z-index: -1
+      z-index: -2
       animation: animatedgradient 4s ease  infinite
       background-size: 1000% 1000%
 
@@ -202,4 +210,29 @@
       background-position: 5% 50%
     100%
       background-position: 95% 50%
+
+  .gradient-border0
+    --borderWidth:2px
+    background: transparent
+    position: relative
+    border-radius: 45px
+
+    &:after
+      content: ''
+      position: absolute
+      top: calc(-1 * var(--borderWidth))
+      left: calc(-1 * var(--borderWidth))
+      height: calc(100% + var(--borderWidth) * 2)
+      width: calc(100% + var(--borderWidth) * 2)
+      background: linear-gradient(60deg, transparent 20%, rgba(29,94,132)30%, rgba(39,205,122,.7), rgba(29,94,132), transparent 80%)
+      border-radius: 45px
+      z-index: -1
+      animation: animatedgradient0 4s ease  infinite
+      background-size: 1000% 1000%
+
+  @keyframes animatedgradient0
+    0%
+      background-position: 95% 50%
+    100%
+      background-position: 5% 50%
 </style>

@@ -4,7 +4,7 @@
   >
     <v-row
       class="ma-0 pa-0"
-      style="border:3px solid #78909C;background-color:#455A64;max-width:297px;min-width:297px;border-radius:45px"
+      style="border:3px solid rgb(39,205,122);background-color:#455A64;max-width:297px;min-width:297px;border-radius:45px"
     >
     <v-avatar
       class="ma-0 pa-0"
@@ -61,81 +61,60 @@
 
     </v-row>
 
+<v-row
+  class="ma-0 pa-0"
+>
+  <v-row
+    class="ma-0 pa-0 font-weight-bold"
+    style="width:100%"
+    align="center"
+  >
+    <v-row
+      class="ma-0 pa-0"
+      width="20px"
+      justify="center"
+    >
+      <v-img
+        max-height="15"
+        max-width="15"
+        src="bch_b_small.png"
+        class="ma-0 mt-1 pa-0"
+      ></v-img>
+      <p
+        style="color:#CFD8DC;font-size:13px;font-family:Orbitron;letter-spacing:1px"
+        class="ma-0 pa-0 ml-1"
+      >{{ ava_amount }}</p>
 
+      <p
+        style="color:#78909C;font-size:13px;font-family:Orbitron;letter-spacing:1px"
+        class="ma-0 ml-2 pa-0 font-weight-medium"
+      >${{ ava_usd_amount }}</p>
+    </v-row>
+  </v-row>
 
+    <v-progress-linear
+      background-color="#CFD8DC"
+      color="rgb(39,205,122)"
+      :value="this.percent"
+    ></v-progress-linear>
 
+    <v-row
+      class="ma-0 pa-0 font-weight-bold"
+      style="width:100%"
+      align="center"
 
-              <v-row
-                class="ma-0 mt-0 pa-0"
-                style="width:100%;height:45px"
-                align="center"
-
-              >
-                <v-row
-                  class="ma-0 pa-0 font-weight-bold"
-
-                  align="center"
-                >
-
-
-                    <v-img
-                      max-height="15"
-                      max-width="15"
-                      src="bch_b_small.png"
-                      class="ml-8 mr-1"
-                    ></v-img>
-                    <p
-                      style="color:#CFD8DC"
-                      class="ma-0 pa-0"
-                    >{{ ava_amount }}</p>
-
-                    <p
-                      style="color:#455A64"
-                      class="ma-0 pa-0"
-                    >/USD ${{ ava_usd_amount }}</p>
-
-                  <v-row
-                    class="ma-0 mb-0 mr-8 pa-0 font-weight-medium"
-                    style="height:20px;color:#CFD8DC;font-size:10px"
-                    justify="center"
-                
-                  >
-                    <v-spacer></v-spacer>
-
-                    <p
-                      style="color:#CFD8DC"
-                    >0.0032 TAKEN</p>
-
-                  </v-row>
-                </v-row>
-
-
-
-
-                <v-row
-                  class="ma-0 mb-1 pa-0"
-                  style="max-height:15px"
-                >
-                  <v-row
-                    class="ma-0 mt-0 pa-0 mx-8"
-                    style="border-radius:45px;background-color:rgb(39,205,122);max-height:4px;font-size:10px;color:transparent"
-                  >
-                    WORLD'S FIRST SOCCER BET MARKET
-                  </v-row>
-                  <v-row
-                    class="ma-0 pa-0 mx-8 font-weight-medium"
-                    style="background-color:transparent;width:100%;font-size:10px"
-                    justify="center"
-                  >
-
-                    <p
-                      style="color:#CFD8DC"
-                    >0.0032 TAKEN</p>
-                  </v-row>
-                </v-row>
-
-
-              </v-row>
+    >
+      <v-row
+        class="ma-0 pa-0"
+        align="center"
+      >
+        <p
+          style="color:#CFD8DC;font-size:8px;font-family:Orbitron;letter-spacing:1px"
+          class="ma-0 mt-1 ml-8 pa-0 font-weight-bold"
+        >KICK OFF IN 1 day 13 hours 20 min</p>
+      </v-row>
+    </v-row>
+</v-row>
 
 
 
@@ -185,6 +164,9 @@
 
 
 
+
+
+
                   <v-row
                     class="ma-1 pa-0"
                     style="background-color:#455A64;border-radius:45px;max-width:48px;min-width:48px"
@@ -222,17 +204,33 @@ export default {
   computed: {
       // a computed getter
       ava_amount: function () {
-        // `this` points to the vm instance
-        return this.bet.init_amount / 100000000
+        var amount = this.bet.init_amount - this.bet.taken_amount;
+        return amount / 100000000
       },
       ava_usd_amount: function () {
         var amount = this.ava_amount * 529;
         return amount.toFixed(2);
       },
+      percent: function () {
+        var amount = this.bet.taken_amount * 100 / this.bet.init_amount;
+        return 100 - amount.toFixed(0);
+      },
+      inv_percent: function () {
+        var amount = this.bet.taken_amount * 100 / this.bet.init_amount;
+        return amount.toFixed(0);
+      },
+      countdown: function () {
+        var amount = this.ava_amount * 529;
+        return amount.toFixed(2);
+      }
+    },
+    mounted () {
+
     },
   }
 </script>
 
 <style lang="sass">
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap')
 
 </style>
