@@ -24,7 +24,7 @@
         </v-card>
 
         <v-row
-          class="ma-0 mt-2 mx-1 pa-0 overflow-y-auto overflow-x-hidden"
+          class="ma-0 mt-4 pa-0 overflow-y-auto overflow-x-hidden"
           style="width:100%;max-height:385px;background-color:transparent;border-radius:3px"
         >
 
@@ -37,65 +37,60 @@
             dense
           >
 
-
-            <v-list-item
-              v-for="bet in $store.state.bets"
-              :key="bet.bet_id"
-
-            >
-              <v-row
-                class="ma-0 mt-2 pa-0 gradient-border0"
-                style="border-radius:45px"
+              <v-list-item
+                id="item"
+                class="ma-0 pa-0"
+                v-for="bet in $store.state.bets"
+                :key="bet.bet_id"
+                style="border-radius:45px;width:95%"
               >
-                <le
-                  :bet="bet"
-                  class="ma-0 pa-0"
-                  style="background: linear-gradient(transparent 10%, rgba(69, 90, 100,0.5) 10%, rgba(69, 90, 100,0.5) 90%, transparent 90%);border-radius:45px;border:0px solid #455A64"
-                ></le>
-              </v-row>
 
-            </v-list-item>
+                <v-row
+                  v-if="bet.status == 'open' && (bet.type.charAt(0)=='l')"
+                  id="capa1"
+                  class="ma-0 mt-1 mr-5 mb-1 pa-0 gradient-border0"
+                  style="border-radius:45px"
+                >
+                  <levsv
+                    v-if="bet.type == 'levsv'"
+                    id="capa2"
+                    :bet="bet"
+                    class="ma-0 pa-0"
+                    style="border-radius:45px;border:0px solid #455A64"
+                  ></levsv>
+                  <lvsev
+                    v-if="bet.type == 'lvsev'"
+                    id="capa2"
+                    :bet="bet"
+                    class="ma-0 pa-0"
+                    style="border-radius:45px;border:0px solid #455A64"
+                  ></lvsev>
+                </v-row>
+                <v-row
+                  v-else-if="bet.status == 'open' && (bet.type.charAt(0)=='v')"
+                  id="capa1"
+                  class="ma-0 mt-1 ml-5 mb-1 pa-0 gradient-border0"
+                  style="border-radius:45px"
+                >
+                  <vevsl
+                    v-if="bet.type == 'vevsl'"
+                    id="capa2"
+                    :bet="bet"
+                    class="ma-0 pa-0"
+                    style="border-radius:45px;border:0px solid #455A64"
+                  ></vevsl>
+                  <vvsel
+                    v-if="bet.type == 'vvsel'"
+                    id="capa2"
+                    :bet="bet"
+                    class="ma-0 pa-0"
+                    style="border-radius:45px;border:0px solid #455A64"
+                  ></vvsel>
+                </v-row>
+
+              </v-list-item>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <v-list-item
-              class="ml-8 mt-1 pa-0 rigth"
-              style="background:#455A64;border-radius:3px 45px 45px 3px;width:95%"
-            >
-              <v-spacer></v-spacer>
-
-            </v-list-item>
 
           </v-list>
 
@@ -117,41 +112,15 @@
 
   export default {
     components: {
-      'le': require('@/components/OpenBets/le.vue').default
-    },
-    data: () => ({
-      date: null,
-    }),
-    methods: {
-      getDate(timestamp){
-
-        timestamp /= 1000; // from ms to seconds
-
-        function component(x, v) {
-            return Math.floor(x / v);
-        }
-
-        var $div = $('div');
-
-        setInterval(function() {
-
-            timestamp--;
-
-            var days    = component(timestamp, 24 * 60 * 60),
-                hours   = component(timestamp,      60 * 60) % 24,
-                minutes = component(timestamp,           60) % 60,
-                seconds = component(timestamp,            1) % 60;
-
-            $div.html(days + " days, " + hours + ":" + minutes + ":" + seconds);
-
-        }, 1000);
-      },
+      'levsv': require('@/components/OpenBets/levsv.vue').default,
+      'lvsev': require('@/components/OpenBets/lvsev.vue').default,
+      'vevsl': require('@/components/OpenBets/vevsl.vue').default,
+      'vvsel': require('@/components/OpenBets/vvsel.vue').default
     }
   }
 </script>
 
 
-</script>
 
 
 
@@ -159,9 +128,7 @@
 
 
 
-
-
-<style lang="sass" scoped>
+<style lang="sass">
   ::-webkit-scrollbar
     border-radius: 0 3px 3px 0
     background: #37474F
@@ -185,10 +152,63 @@
 
 
 
+  #item #capa2
+    background: linear-gradient(transparent 5%, rgba(69, 90, 100,1) 5%, rgba(69, 90, 100,1) 95%, transparent 95%)
+
+
+  #item:hover #capa1
+
+    --borderWidth:1px
+    background: rgba(39,205,122,.4)
+    position: relative
+    border-radius: 45px
+
+    &:after
+      content: ''
+      position: absolute
+      top: calc(-1 * var(--borderWidth))
+      left: calc(-1 * var(--borderWidth))
+      height: calc(100% + var(--borderWidth) * 2)
+      width: calc(100% + var(--borderWidth) * 2)
+      background: linear-gradient(60deg, transparent 20%, rgba(39,205,122,.4), transparent 80%)
+      border-radius: 45px
+      z-index: -1
+      animation: animatedgradient0 1s ease  infinite
+      background-size: 1000% 1000%
+
+
+  #item:hover #capa2
+    background: linear-gradient(transparent 5%, rgba(69, 90, 100,0.4) 5%, rgba(69, 90, 100,0.4) 95%, transparent 95%)
+
+  #item #capa3
+    background-color: #455A64
+  #item:hover #capa3
+    background-color: rgba(39,205,122,.4)
+
+
+
+  #item #capa4
+    background-color: #455A64
+  #item:hover #capa4
+    background-color: transparent
+
+  #item #capa5
+    background-color: #455A64
+    border: 0px solid #455A64
+  #item:hover #capa5
+    background-color: rgb(52,125,96)
+    border: 0px solid rgb(52,125,96)
+
+
+  #item #capa6
+    background-color: #CFD8DC
+    border: 1px solid #CFD8DC
+
+
 
   .gradient-border1
     --borderWidth:2px
-    background: #455A64
+    background: rgba(39,205,122,.4)
     position: relative
     border-radius: 2px
 
@@ -211,28 +231,11 @@
     100%
       background-position: 95% 50%
 
-  .gradient-border0
-    --borderWidth:2px
-    background: transparent
-    position: relative
-    border-radius: 45px
-
-    &:after
-      content: ''
-      position: absolute
-      top: calc(-1 * var(--borderWidth))
-      left: calc(-1 * var(--borderWidth))
-      height: calc(100% + var(--borderWidth) * 2)
-      width: calc(100% + var(--borderWidth) * 2)
-      background: linear-gradient(60deg, transparent 20%, rgba(29,94,132)30%, rgba(39,205,122,.7), rgba(29,94,132), transparent 80%)
-      border-radius: 45px
-      z-index: -1
-      animation: animatedgradient0 4s ease  infinite
-      background-size: 1000% 1000%
 
   @keyframes animatedgradient0
     0%
       background-position: 95% 50%
     100%
       background-position: 5% 50%
+
 </style>
