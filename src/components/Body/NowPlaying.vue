@@ -63,7 +63,7 @@
                       <v-img
                         max-height="25"
                         max-width="25"
-                        :src="fixture.league.logo"
+                        :src="fixture.league[0].logo"
                       ></v-img>
 
 
@@ -77,13 +77,13 @@
                     style="width:42%;max-width:42%;color:#CFD8DC"
                     class="ma-0 mr-3 pa-0 text-right font-weight-bold"
                   >
-                    {{ fixture.homeTeam.team_name }}
+                    {{ fixture.homeTeam[0].team_name }}
                   </v-col>
                   <v-img
                     class="mr-5"
                     max-height="35"
                     max-width="25"
-                    :src="fixture.homeTeam.logo"
+                    :src="fixture.homeTeam[0].logo"
                   ></v-img>
                   <v-divider
                     class="ma-0 mr-3 pa-0"
@@ -117,14 +117,14 @@
                   class="ml-5"
                     max-height="35"
                     max-width="25"
-                    :src="fixture.awayTeam.logo"
+                    :src="fixture.awayTeam[0].logo"
                   ></v-img>
 
                   <v-col
                     style="width:42%;max-width:42%;color:#CFD8DC"
                     class="ma-0 ml-3 pa-0 text-left font-weight-bold"
                   >
-                    {{ fixture.awayTeam.team_name }}
+                    {{ fixture.awayTeam[0].team_name }}
                   </v-col>
                   <v-col
                     style="width:9%;max-width:9%;color:#CFD8DC"

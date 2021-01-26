@@ -214,14 +214,14 @@
             <v-row
               id="capa3"
               class="ma-0 pa-0"
-              style="border:0px solid rgb(39,205,122);max-width:252px;min-width:252px;border-radius:45px"
+              style="border:0px solid rgb(39,205,122);max-width:225px;min-width:225px;border-radius:45px"
             >
 
 
               <v-row
 
                 class="ma-0 pa-0"
-                style="border:0px solid #78909C;border-radius:45px;max-width:185px"
+                style="border:0px solid #78909C;border-radius:45px;max-width:155px"
               >
 
                 <v-row
@@ -231,15 +231,8 @@
                   align="center"
                 >
 
-                  <v-icon
-                    class="ma-0 pa-0"
-                    color= "#CFD8DC"
-                  >
-                    mdi-alpha-t-circle
-                  </v-icon>
-
                   <v-img
-                    class="ma-0 ml-3 pa-0"
+                    class="ma-0 pa-0"
                     max-height="35"
                     max-width="35"
                     :src="bet.fixture[0].homeTeam[0].logo"

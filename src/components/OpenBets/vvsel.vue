@@ -7,7 +7,7 @@
   <v-row
     id="capa6"
     class="ma-0 pa-0"
-    style="border-radius:45px;max-width:359px;min-width:359px"
+    style="border-radius:45px;max-width:319px;min-width:319px"
   >
     <v-row
       class="ma-1 pa-0"
@@ -37,45 +37,31 @@
       style="border-radius:45px"
 
     >
+
+
       <v-row
         id="capa7"
         class="ma-0 pa-0"
         style="border-radius:45px"
       >
-        <v-spacer></v-spacer>
+
 
 
         <v-row
           id="capa5"
           class="ma-0 pa-0"
-          style="border-radius:45px;max-width:300px;min-width:300px"
+          style="border-radius:45px;max-width:260px"
           align="center"
         >
+
+          <v-spacer></v-spacer>
           <v-row
-            class="ma-0 ml-5 pa-0"
-            style="background-color:rgb(39,205,122);max-width:88px;min-width:88px;border-radius:4px"
-
-          >
-            <v-icon
-              class="ml-2"
-              color= "#455A64"
-              small
-            >
-              mdi-close-box
-            </v-icon>
-            <p
-              class="ma-0 ml-1 pa-0 font-weight-bold"
-              style="color:#455A64;font-size:14px;font-family:Orbitron;letter-spacing:1px"
-            >{{ factor }}</p>
-
-          </v-row>
-
-          <v-row
-            class="ma-0 pa-0 font-weight-bold text-right"
-            style="background-color:red;color:#CFD8DC;font-size:17px;max-width:140px;min-width:140px;z-index:4"
+            class="ma-0 pa-0 mr-4 font-weight-bold text-right"
+            style="color:#CFD8DC;font-size:17px;max-width:140px;min-width:140px;z-index:4;line-height:20px"
             align="center"
           >
-            {{ bet.fixture[0].awayTeam[0].team_name}}
+            <v-spacer></v-spacer>
+            {{ bet.fixture[0].awayTeam[0].team_name }}
           </v-row>
           <v-img
             class="ma-0 mr-3 pa-0"
@@ -84,7 +70,12 @@
             :src="bet.fixture[0].awayTeam[0].logo"
             style="z-index:4"
           ></v-img>
-
+          <v-icon
+            class="ma-0 pa-0"
+            color= "#CFD8DC"
+          >
+            mdi-alpha-t-circle
+          </v-icon>
           <v-spacer></v-spacer>
 
 
@@ -107,41 +98,56 @@
 
 
 <v-row
-  class="ma-0 pa-0"
+  class="ma-0 mx-2 pa-0"
 >
   <v-row
     class="ma-0 pa-0 font-weight-bold"
     style="width:100%"
     justify="center"
   >
-    <v-row
-      class="ma-0 pa-0"
-      width="20px"
-      align="center"
-      justify="center"
+  <v-row
+    class="ma-0 mt-2 pa-0"
+    width="20px"
+    align="center"
+    justify="center"
+  >
+    <v-icon
+      class="ml-3 mt-1"
+      color= "rgb(39,205,122)"
+      small
     >
-      <v-img
-        max-height="15"
-        max-width="15"
-        src="bch_b_small.png"
-        class="ma-0 mt-1 pa-0"
-      ></v-img>
-      <p
-        style="color:#CFD8DC;font-size:13px;font-family:Orbitron;letter-spacing:1px"
-        class="ma-0 mb-1 mt-2 pa-0 ml-1 font-weight-black"
-      >{{ ava_amount }}</p>
+      mdi-close-box
+    </v-icon>
+    <p
+      class="ma-0 ml-1 mr-3 mt-1 pa-0 font-weight-bold"
+      style="color:rgb(39,205,122);font-size:14px;font-family:Orbitron;letter-spacing:1px"
+    >{{ factor }}</p>
+    <v-spacer></v-spacer>
 
-      <p
-        style="color:#78909C;font-size:13px;font-family:Orbitron;letter-spacing:1px"
-        class="ma-0 ml-2 mt-1 pa-0 font-weight-bold"
-      >${{ ava_usd_amount }}</p>
-    </v-row>
+    <v-img
+      max-height="15"
+      max-width="15"
+      src="bch_b_small.png"
+      class="ma-0 mt-1 pa-0"
+    ></v-img>
+    <p
+      style="color:#CFD8DC;font-size:13px;font-family:Orbitron;letter-spacing:1px"
+      class="ma-0 mb-1 mt-2 pa-0 ml-1 font-weight-black"
+    >{{ ava_amount }}</p>
+
+    <p
+      style="color:#78909C;font-size:13px;font-family:Orbitron;letter-spacing:1px"
+      class="ma-0 ml-2 mt-1  mr-16 pa-0 font-weight-bold"
+    >${{ ava_usd_amount }}</p>
+    <v-spacer></v-spacer>
+
+  </v-row>
   </v-row>
 
   <v-progress-linear
     class="ma-0 pa-0"
-    background-color="#CFD8DC"
-    color="rgb(39,205,122)"
+    background-color="rgb(39,205,122)"
+    color="#546E7A"
     :value="this.percent"
   ></v-progress-linear>
 
@@ -151,42 +157,49 @@
     align="center"
   >
     <v-row
-      class="ma-0 mb-3 pa-0 font-weight-bold"
+      class="ma-0 mb-3 mr-3 pa-0 font-weight-bold"
       align="center"
     >
         <p
-          style="color:#CFD8DC;font-size:10px;font-family:Orbitron;letter-spacing:0px"
-          class="ma-0 ml-3 mt-0 pa-0 font-weight-bold"
-        >{{inv_percent}}%</p>
-        <p
           style="color:#CFD8DC;font-size:8px;font-family:Orbitron;letter-spacing:0px"
-          class="ma-0 mt-1 ml-1 pa-0 font-weight-medium"
+          class="ma-0 mt-1 ml-3 pa-0 font-weight-medium"
         >TAKEN</p>
+        <p
+          style="color:#CFD8DC;font-size:10px;font-family:Orbitron;letter-spacing:0px"
+          class="ma-0 ml-1 mt-0 pa-0 font-weight-bold"
+        >{{inv_percent}}%</p>
+
 
         <v-spacer></v-spacer>
         <p
+          v-if="this.days > 0"
           style="color:#CFD8DC;font-size:10px;font-family:Orbitron;letter-spacing:0px"
           class="ma-0 pa-0 font-weight-black"
         >{{days}}</p>
         <p
+          v-if="this.days > 0"
           style="color:#CFD8DC;font-size:8px;font-family:Orbitron;letter-spacing:0px"
           class="ma-0 ml-1 mt-1 pa-0 font-weight-medium"
         >days</p>
         <p
+          v-if="this.hours > 0"
           style="color:#CFD8DC;font-size:10px;font-family:Orbitron;letter-spacing:0px"
           class="ma-0 ml-1 pa-0 font-weight-black"
         >{{hours}}</p>
         <p
+          v-if="this.hours > 0"
           style="color:#CFD8DC;font-size:8px;font-family:Orbitron;letter-spacing:0px"
           class="ma-0 ml-1 mt-1 pa-0 font-weight-medium"
         >hrs</p>
         <p
+          v-if="this.minutes > 0"
           style="color:#CFD8DC;font-size:10px;font-family:Orbitron;letter-spacing:0px"
           class="ma-0 ml-1 pa-0 font-weight-black"
         >{{minutes}}</p>
         <p
+          v-if="this.minutes > 0"
           style="color:#CFD8DC;font-size:8px;font-family:Orbitron;letter-spacing:0px"
-          class="ma-0 mt-1 mr-3 pa-0 font-weight-medium"
+          class="ma-0 mt-1 pa-0 font-weight-medium"
         >min</p>
     </v-row>
   </v-row>
@@ -198,17 +211,10 @@
 
 
 
-
-
-
-
-
-
-
             <v-row
               id="capa3"
               class="ma-0 pa-0"
-              style="border:3px solid rgb(39,205,122);max-width:267px;min-width:267px;border-radius:45px"
+              style="border:0px solid rgb(39,205,122);max-width:225px;min-width:225px;border-radius:45px"
             >
 
 
@@ -216,12 +222,12 @@
               <v-row
 
                 class="ma-0 pa-0"
-                style="border:0px solid #78909C;border-radius:45px;max-width:200px;min-width:200px"
+                style="border:0px solid #78909C;border-radius:45px;max-width:160px"
               >
                 <v-row
                   id="capa4"
                   class="ma-0 pa-0"
-                  style="border-radius:45px;max-width:230px;min-width:230px"
+                  style="border-radius:45px;max-width:160px"
                   align="center"
                 >
 
@@ -234,8 +240,8 @@
 
 
                   <v-row
-                    class="ma-0 ml-3 pr-1 pa-0 font-weight-bold text-left"
-                    style="color:#CFD8DC;font-size:14px;max-width:120px;min-width:120px"
+                    class="ma-0 ml-3 pa-0 font-weight-bold text-left"
+                    style="color:#CFD8DC;font-size:14px;max-width:100px;line-height:16px"
                     align="center"
                   >
                     {{ bet.fixture[0].homeTeam[0].team_name}}
@@ -284,7 +290,7 @@ export default {
       },
       percent: function () {
         var amount = this.bet.taken_amount * 100 / this.bet.init_amount;
-        return 100 - amount.toFixed(0);
+        return amount.toFixed(0);
       },
       inv_percent: function () {
         var amount = this.bet.taken_amount * 100 / this.bet.init_amount;

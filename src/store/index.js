@@ -1419,11 +1419,12 @@ export default new Vuex.Store({
       state.bets = bets
     },
     nowPlaying(state, res){
-      const fixtures = res.data.livegames.fixtures
+      const fixtures = res.data.livegames
+      console.log(fixtures);
       state.nowPlaying = fixtures
     },
     leagues(state, res){
-      state.leagues = res.data.livegames.leagues
+      state.leagues = res.data.leagues
     },
     sDrawer(state){
       state.drawer = !state.drawer

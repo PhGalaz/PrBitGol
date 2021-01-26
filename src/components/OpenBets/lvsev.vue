@@ -6,7 +6,7 @@
     <v-row
       id="capa3"
       class="ma-0 pa-0"
-      style="border:3px solid rgb(39,205,122);max-width:225px;min-width:225px;border-radius:45px"
+      style="border:0px solid rgb(39,205,122);max-width:225px;min-width:225px;border-radius:45px 0px 0px 45px"
     >
       <v-avatar
         class="ma-0 pa-0"
@@ -35,7 +35,7 @@
 
           <v-row
             class="ma-0 pr-1 pa-0 font-weight-bold text-right"
-            style="color:#CFD8DC;font-size:14px;max-width:100px;min-width:100px"
+            style="color:#CFD8DC;font-size:14px;max-width:100px;min-width:100px;line-height: 16px"
             align="center"
           >
             <v-spacer></v-spacer>
@@ -59,7 +59,7 @@
     </v-row>
 
 <v-row
-  class="ma-0 pa-0"
+  class="ma-0 mr-2 pa-0"
 >
   <v-row
     class="ma-0 pa-0 font-weight-bold"
@@ -67,16 +67,17 @@
     justify="center"
   >
     <v-row
-      class="ma-0 pa-0"
+      class="ma-0 mt-2 pa-0"
       width="20px"
       align="center"
       justify="center"
     >
+      <v-spacer></v-spacer>
       <v-img
         max-height="15"
         max-width="15"
         src="bch_b_small.png"
-        class="ma-0 mt-1 pa-0"
+        class="ma-0 mt-1 ml-16 pa-0"
       ></v-img>
       <p
         style="color:#CFD8DC;font-size:13px;font-family:Orbitron;letter-spacing:1px"
@@ -87,12 +88,25 @@
         style="color:#78909C;font-size:13px;font-family:Orbitron;letter-spacing:1px"
         class="ma-0 ml-2 mt-1 pa-0 font-weight-bold"
       >${{ ava_usd_amount }}</p>
+      <v-spacer></v-spacer>
+
+        <v-icon
+          class="ml-3 mt-1"
+          color= "rgb(39,205,122)"
+          small
+        >
+          mdi-close-box
+        </v-icon>
+        <p
+          class="ma-0 ml-1 mr-3 mt-1 pa-0 font-weight-bold"
+          style="color:rgb(39,205,122);font-size:14px;font-family:Orbitron;letter-spacing:1px"
+        >{{ factor }}</p>
     </v-row>
   </v-row>
 
   <v-progress-linear
     class="ma-0 pa-0"
-    background-color="#CFD8DC"
+    background-color="#546E7A"
     color="rgb(39,205,122)"
     :value="this.percent"
   ></v-progress-linear>
@@ -103,33 +117,39 @@
     align="center"
   >
     <v-row
-      class="ma-0 mb-3 pa-0 font-weight-bold"
+      class="ma-0 mb-3 ml-3 pa-0 font-weight-bold"
       align="center"
     >
-        <p
-          style="color:#CFD8DC;font-size:10px;font-family:Orbitron;letter-spacing:0px"
-          class="ma-0 ml-3 pa-0 font-weight-black"
-        >{{days}}</p>
-        <p
-          style="color:#CFD8DC;font-size:8px;font-family:Orbitron;letter-spacing:0px"
-          class="ma-0 ml-1 mt-1 pa-0 font-weight-medium"
-        >days</p>
-        <p
-          style="color:#CFD8DC;font-size:10px;font-family:Orbitron;letter-spacing:0px"
-          class="ma-0 ml-1 pa-0 font-weight-black"
-        >{{hours}}</p>
-        <p
-          style="color:#CFD8DC;font-size:8px;font-family:Orbitron;letter-spacing:0px"
-          class="ma-0 ml-1 mt-1 pa-0 font-weight-medium"
-        >hrs</p>
-        <p
-          style="color:#CFD8DC;font-size:10px;font-family:Orbitron;letter-spacing:0px"
-          class="ma-0 ml-1 pa-0 font-weight-black"
-        >{{minutes}}</p>
-        <p
-          style="color:#CFD8DC;font-size:8px;font-family:Orbitron;letter-spacing:0px"
-          class="ma-0 mt-1 ml-1 pa-0 font-weight-medium"
-        >min</p>
+      <p
+        v-if="this.days > 0"
+        style="color:#CFD8DC;font-size:10px;font-family:Orbitron;letter-spacing:0px"
+        class="ma-0 pa-0 font-weight-black"
+      >{{days}}</p>
+      <p
+        v-if="this.days > 0"
+        style="color:#CFD8DC;font-size:8px;font-family:Orbitron;letter-spacing:0px"
+        class="ma-0 ml-1 mt-1 pa-0 font-weight-medium"
+      >days</p>
+      <p
+        v-if="this.hours > 0"
+        style="color:#CFD8DC;font-size:10px;font-family:Orbitron;letter-spacing:0px"
+        class="ma-0 ml-1 pa-0 font-weight-black"
+      >{{hours}}</p>
+      <p
+        v-if="this.hours > 0"
+        style="color:#CFD8DC;font-size:8px;font-family:Orbitron;letter-spacing:0px"
+        class="ma-0 ml-1 mt-1 pa-0 font-weight-medium"
+      >hrs</p>
+      <p
+        v-if="this.minutes > 0"
+        style="color:#CFD8DC;font-size:10px;font-family:Orbitron;letter-spacing:0px"
+        class="ma-0 ml-1 pa-0 font-weight-black"
+      >{{minutes}}</p>
+      <p
+        v-if="this.minutes > 0"
+        style="color:#CFD8DC;font-size:8px;font-family:Orbitron;letter-spacing:0px"
+        class="ma-0 mt-1 mr-3 pa-0 font-weight-medium"
+      >min</p>
         <v-spacer></v-spacer>
         <p
           style="color:#CFD8DC;font-size:10px;font-family:Orbitron;letter-spacing:0px"
@@ -152,25 +172,25 @@
               <v-row
                 id="capa6"
                 class="ma-0 pa-0"
-                style="border-radius:45px;max-width:389px;min-width:389px"
+                style="border-radius:45px;max-width:319px;min-width:319px"
               >
                 <v-row
                   class="ma-0 pa-0"
-                  style="border-radius:45px"
+                  style="border-radius:0px 45px 45px 0px"
 
                 >
                   <v-row
                     id="capa7"
                     class="ma-0 pa-0"
-                    style="border-radius:45px"
+                    style="border-radius:0px 45px 45px 0px"
                   >
-                    <v-spacer></v-spacer>
+
 
 
                     <v-row
                       id="capa5"
                       class="ma-0 pa-0"
-                      style="border-radius:45px;max-width:330px;min-width:330px"
+                      style="border-radius:45px;max-width:260px"
                       align="center"
                     >
                       <v-icon
@@ -190,29 +210,14 @@
 
                       <v-row
                         class="ma-0 pl-6 pa-0 font-weight-bold text-left"
-                        style="color:#CFD8DC;font-size:17px;max-width:140px;min-width:140px;z-index:4"
+                        style="color:#CFD8DC;font-size:17px;max-width:140px;z-index:4;line-height:20px"
                         align="center"
                       >
                         {{ bet.fixture[0].awayTeam[0].team_name}}
                       </v-row>
-                      <v-spacer></v-spacer>
 
-                      <v-row
-                        class="ma-0 mr-5 pa-0"
-                        style="background-color:rgb(39,205,122);max-width:88px;min-width:88px;border-radius:4px"
-                      >
-                        <v-icon
-                          class="ml-3"
-                          color= "#455A64"
-                          small
-                        >
-                          mdi-close-box
-                        </v-icon>
-                        <p
-                          class="ma-0 ml-1 pa-0 font-weight-bold"
-                          style="color:#455A64;font-size:14px;font-family:Orbitron;letter-spacing:1px"
-                        >{{ factor }}</p>
-                      </v-row>
+
+
                     </v-row>
 
                   </v-row>
@@ -229,7 +234,7 @@
 
                   <v-row
                     class="ma-1 pa-0"
-                    style="background-color:#455A64;border-radius:45px;max-width:48px;min-width:48px"
+                    style="background-color:#455A64;border-radius:45px;max-width:48px"
                     justify="center"
                   >
                     <v-avatar

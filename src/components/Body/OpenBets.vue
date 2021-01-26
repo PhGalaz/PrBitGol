@@ -25,7 +25,7 @@
 
         <v-row
           class="ma-0 mt-4 pa-0 overflow-y-auto overflow-x-hidden"
-          style="width:100%;max-height:385px;background-color:transparent;border-radius:3px"
+          style="width:100%;background-color:transparent;border-radius:3px"
         >
 
           <v-list
@@ -48,7 +48,7 @@
                 <v-row
                   v-if="bet.status == 'open' && (bet.type.charAt(0)=='l')"
                   id="capa1"
-                  class="ma-0 mt-1 mr-5 mb-1 pa-0 gradient-border0"
+                  class="ma-0 mt-1 ml-4 mb-1 pa-0 gradient-border0"
                   style="border-radius:45px"
                 >
                   <levsv
@@ -65,11 +65,32 @@
                     class="ma-0 pa-0"
                     style="border-radius:45px;border:0px solid #455A64"
                   ></lvsev>
+                  <lvsv
+                    v-if="bet.type == 'lvsv'"
+                    id="capa2"
+                    :bet="bet"
+                    class="ma-0 pa-0"
+                    style="border-radius:45px;border:0px solid #455A64"
+                  ></lvsv>
+                  <lvvse
+                    v-if="bet.type == 'lvvse'"
+                    id="capa2"
+                    :bet="bet"
+                    class="ma-0 pa-0"
+                    style="border-radius:45px;border:0px solid #455A64"
+                  ></lvvse>
+                  <lvse
+                    v-if="bet.type == 'lvse'"
+                    id="capa2"
+                    :bet="bet"
+                    class="ma-0 pa-0"
+                    style="border-radius:45px;border:0px solid #455A64"
+                  ></lvse>
                 </v-row>
                 <v-row
                   v-else-if="bet.status == 'open' && (bet.type.charAt(0)=='v')"
                   id="capa1"
-                  class="ma-0 mt-1 ml-5 mb-1 pa-0 gradient-border0"
+                  class="ma-0 mt-1 mr-4 mb-1 pa-0 gradient-border0"
                   style="border-radius:45px"
                 >
                   <vevsl
@@ -86,6 +107,13 @@
                     class="ma-0 pa-0"
                     style="border-radius:45px;border:0px solid #455A64"
                   ></vvsel>
+                  <vvsl
+                    v-if="bet.type == 'vvsl'"
+                    id="capa2"
+                    :bet="bet"
+                    class="ma-0 pa-0"
+                    style="border-radius:45px;border:0px solid #455A64"
+                  ></vvsl>
                 </v-row>
 
               </v-list-item>
@@ -114,7 +142,11 @@
     components: {
       'levsv': require('@/components/OpenBets/levsv.vue').default,
       'lvsev': require('@/components/OpenBets/lvsev.vue').default,
+      'lvsv': require('@/components/OpenBets/lvsv.vue').default,
       'vevsl': require('@/components/OpenBets/vevsl.vue').default,
+      'vvsl': require('@/components/OpenBets/vvsl.vue').default,
+      'lvvse': require('@/components/OpenBets/lvvse.vue').default,
+      'lvse': require('@/components/OpenBets/lvse.vue').default,
       'vvsel': require('@/components/OpenBets/vvsel.vue').default
     }
   }
@@ -153,7 +185,8 @@
 
 
   #item #capa2
-    background: linear-gradient(transparent 5%, rgba(69, 90, 100,1) 5%, rgba(69, 90, 100,1) 95%, transparent 95%)
+    background-color: rgba(69, 90, 100,1)
+    height: 52px
 
 
   #item:hover #capa1
@@ -181,33 +214,32 @@
     background: linear-gradient(transparent 5%, rgba(69, 90, 100,0.4) 5%, rgba(69, 90, 100,0.4) 95%, transparent 95%)
 
   #item #capa3
-    background-color: #455A64
-  #item:hover #capa3
-    background-color: rgba(39,205,122,.4)
+    background-color: transparent
+
 
 
 
   #item #capa4
-    background-color: #455A64
-  #item:hover #capa4
     background-color: transparent
 
+
   #item #capa5
-    background-color: #455A64
+    background-color: transparent
     border: 0px solid #455A64
-  #item:hover #capa5
-    background-color: rgb(52,125,96)
-    border: 0px solid rgb(52,125,96)
+
 
 
   #item #capa6
-    background-color: #CFD8DC
-    border: 1px solid #CFD8DC
+    background-color: transparent
+    border: 0px solid #CFD8DC
+  #item:hover #capa6
+    background-color: rgba(255,255,255,.05)
+    border: 0px solid #CFD8DC
 
 
 
   .gradient-border1
-    --borderWidth:2px
+    --borderWidth:0px
     background: rgba(39,205,122,.4)
     position: relative
     border-radius: 2px

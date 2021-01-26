@@ -6,7 +6,7 @@
     <v-row
       id="capa3"
       class="ma-0 pa-0"
-      style="border:0px solid rgb(39,205,122);max-width:252px;min-width:252px;border-radius:45px"
+      style="border:0px solid rgb(39,205,122);max-width:225px;min-width:225px;border-radius:45px"
     >
       <v-avatar
         class="ma-0 pa-0"
@@ -23,41 +23,33 @@
       <v-row
 
         class="ma-0 pa-0"
-        style="border:0px solid #78909C;border-radius:45px;max-width:185px;min-width:185px"
+        style="border:0px solid #78909C;border-radius:45px;max-width:160px;min-width:160px"
       >
         <v-row
           id="capa4"
           class="ma-0 pa-0"
-          style="border-radius:45px;max-width:185px;min-width:185px"
+          style="border-radius:45px;max-width:160px;min-width:160px"
           align="center"
         >
           <v-spacer></v-spacer>
 
           <v-row
             class="ma-0 pr-1 pa-0 font-weight-bold text-right"
-            style="color:#CFD8DC;font-size:14px;max-width:100px;min-width:100px;line-height: 16px"
+            style="color:#CFD8DC;font-size:14px;max-width:100px;min-width:100px;line-height:16px"
             align="center"
           >
             <v-spacer></v-spacer>
             {{ bet.fixture[0].homeTeam[0].team_name}}
           </v-row>
+          <v-spacer></v-spacer>
+          <v-img
+            class="ma-0 mr-2 pa-0"
+            max-height="35"
+            max-width="35"
+            :src="bet.fixture[0].homeTeam[0].logo"
+          ></v-img>
 
 
-
-
-            <v-img
-              class="ma-0 ml-2 pa-0"
-              max-height="35"
-              max-width="35"
-              :src="bet.fixture[0].homeTeam[0].logo"
-            ></v-img>
-
-          <v-icon
-            class="ml-2"
-            color= "#CFD8DC"
-          >
-            mdi-alpha-t-circle
-          </v-icon>
         </v-row>
 
 
@@ -67,7 +59,7 @@
     </v-row>
 
 <v-row
-  class="ma-0 mr-2 pa-0"
+  class="ma-0 mx-2 pa-0"
 >
   <v-row
     class="ma-0 pa-0 font-weight-bold"
@@ -81,7 +73,6 @@
       justify="center"
     >
       <v-spacer></v-spacer>
-
       <v-img
         max-height="15"
         max-width="15"
@@ -124,12 +115,10 @@
     class="ma-0 pa-0"
     style="width:100%"
     align="center"
-    justify="center"
   >
     <v-row
       class="ma-0 mb-3 ml-3 pa-0 font-weight-bold"
       align="center"
-      justify="center"
     >
       <p
         v-if="this.days > 0"
@@ -201,7 +190,7 @@
                     <v-row
                       id="capa5"
                       class="ma-0 pa-0"
-                      style="border-radius:45px;max-width:220px"
+                      style="border-radius:45px;max-width:260px"
                       align="center"
                     >
 
@@ -214,12 +203,13 @@
                         ></v-img>
 
                       <v-row
-                        class="ma-0 ml-4 pa-0 font-weight-bold text-left"
+                        class="ma-0 pl-6 pa-0 font-weight-bold text-left"
                         style="color:#CFD8DC;font-size:17px;max-width:140px;z-index:4;line-height:20px"
                         align="center"
                       >
-                        {{ bet.fixture[0].awayTeam[0].team_name }}
+                        {{ bet.fixture[0].awayTeam[0].team_name}}
                       </v-row>
+
 
 
                     </v-row>
@@ -238,7 +228,7 @@
 
                   <v-row
                     class="ma-1 pa-0"
-                    style="background-color:#455A64;border-radius:45px;max-width:48px;min-width:48px"
+                    style="background-color:#455A64;border-radius:45px;max-width:48px"
                     justify="center"
                   >
                     <v-avatar
